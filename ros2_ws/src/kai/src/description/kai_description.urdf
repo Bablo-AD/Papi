@@ -1,75 +1,80 @@
 <?xml version="1.0"?>
-<robot name="kai" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="custom_robot">
 
-  <!-- Base link (Plastic Box) -->
+  <!-- Base Link -->
   <link name="base_link">
     <visual>
       <geometry>
-        <box size="0.25 0.13 0.05"/> <!-- dimensions: length, width, height -->
+        <box size="0.1 0.1 0.02"/> <!-- Adjust dimensions as needed -->
       </geometry>
-      <origin xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
   </link>
 
-  <!-- Servo Motor 1 -->
-  <link name="servo_motor_1">
-    <visual>
-      <geometry>
-        <box size="0.04 0.02 0.04"/> <!-- approximate size of MG995 servo motor -->
-      </geometry>
-      <origin xyz="0.125 0 0.02"/> <!-- positioning relative to the base link -->
-      <material name="black"/>
-    </visual>
-  </link>
+  <!-- First Servo Joint -->
+  <joint name="joint1" type="continuous">
+    <parent link="base_link"/>
+    <child link="servo_link1"/>
+    <origin xyz="0 0 0.02" rpy="0 0 0"/> <!-- Adjust the position and orientation as needed -->
+    <axis xyz="0 0 1"/>
+  </joint>
 
-  <!-- Servo Motor 2 -->
-  <link name="servo_motor_2">
+  <link name="servo_link1">
     <visual>
       <geometry>
-        <box size="0.04 0.02 0.04"/> <!-- approximate size of MG995 servo motor -->
+        <box size="0.03 0.03 0.05"/> <!-- Adjust dimensions as needed -->
       </geometry>
-      <origin xyz="0.115 0 0.08"/> <!-- positioning relative to the first servo motor -->
-      <material name="black"/>
-    </visual>
-  </link>
-
-  <!-- Arm attached to Servo Motor 2 -->
-  <link name="arm">
-    <visual>
-      <geometry>
-        <box size="0.15 0.01 0.01"/> <!-- size of the arm -->
-      </geometry>
-      <origin xyz="0 0 0.04"/> <!-- positioning relative to the second servo motor -->
       <material name="blue"/>
     </visual>
   </link>
 
-  <!-- Joints -->
-
-  <!-- Fixed joint between base link and servo motor 1 -->
-  <joint name="base_to_servo1" type="fixed">
-    <parent link="base_link"/>
-    <child link="servo_motor_1"/>
-    <origin xyz="0.125 0 0.025"/>
+  <!-- Second Servo Joint -->
+  <joint name="joint2" type="continuous">
+    <parent link="servo_link1"/>
+    <child link="servo_link2"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/> <!-- Adjust the position and orientation as needed -->
+    <axis xyz="0 1 0"/>
   </joint>
 
-  <!-- Rotational joint for servo motor 1 -->
-  <joint name="servo1_to_servo2" type="revolute">
-    <parent link="servo_motor_1"/>
-    <child link="servo_motor_2"/>
-    <origin xyz="0 0 0.04"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10.0" lower="-1.57" upper="1.57" velocity="1.0"/>
+  <link name="servo_link2">
+    <visual>
+      <geometry>
+        <box size="0.03 0.03 0.05"/> <!-- Adjust dimensions as needed -->
+      </geometry>
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <!-- Ruler Link -->
+  <joint name="joint3" type="fixed">
+    <parent link="servo_link2"/>
+    <child link="ruler_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/> <!-- Adjust the position and orientation as needed -->
   </joint>
 
-  <!-- Rotational joint for servo motor 2 -->
-  <joint name="servo2_to_arm" type="revolute">
-    <parent link="servo_motor_2"/>
-    <child link="arm"/>
-    <origin xyz="0 0 0.04"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="10.0" lower="-1.57" upper="1.57" velocity="1.0"/>
+  <link name="ruler_link">
+    <visual>
+      <geometry>
+        <box size="0.3 0.02 0.02"/> <!-- Adjust dimensions as needed -->
+      </geometry>
+      <material name="transparent"/>
+    </visual>
+  </link>
+
+  <!-- Pen Link -->
+  <joint name="joint4" type="fixed">
+    <parent link="ruler_link"/>
+    <child link="pen_link"/>
+    <origin xyz="0.15 0 0" rpy="0 0 0"/> <!-- Adjust the position and orientation as needed -->
   </joint>
+
+  <link name="pen_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.15"/> <!-- Adjust dimensions as needed -->
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
 
 </robot>

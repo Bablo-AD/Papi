@@ -5,7 +5,7 @@ import os
 
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='kai').find('kai')
-    default_model_path = os.path.join(pkg_share, 'src/description/kai_description.urdf')
+    default_model_path = os.path.join(pkg_share, 'src/description/robot.urdf')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
 
     robot_state_publisher_node = launch_ros.actions.Node(
@@ -17,7 +17,7 @@ def generate_launch_description():
         package='joint_state_publisher',
         executable='joint_state_publisher',
         name='joint_state_publisher',
-        parameters=[{'robot_description': Command(['xarcro ', default_model_path])}],
+        parameters=[{'robot_description': Command(['xacro ', default_model_path])}],
         condition=launch.conditions.UnlessCondition(LaunchConfiguration('gui'))
     )
     joint_state_publisher_gui_node = launch_ros.actions.Node(
