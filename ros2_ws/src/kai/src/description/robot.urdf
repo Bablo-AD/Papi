@@ -1,101 +1,411 @@
-<robot name="onshape">
-<link name="base">
+<?xml version="1.0"?>
+<robot name="quadruped_robot">
+<link name="torso_quadruped">
 <visual>
-<origin xyz="0.024010805815751698478 -0.020511321414684785536 0.20450799627828647465" rpy="4.5558316808026604834e-17 0.26179938779915029601 1.5707963267948972241" />
+<origin xyz="-0.036130376160144805908 0.030409909784793798249 0.0019046843051910289368" rpy="0 -0 0" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description/part_1.stl"/>
+<mesh filename="file://$(find kai)/src/description/torso_quadruped.stl"/>
 </geometry>
-<material name="part_1_material">
+<material name="torso_quadruped_material">
 <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
 </material>
 </visual>
 <collision>
-<origin xyz="0.024010805815751698478 -0.020511321414684785536 0.20450799627828647465" rpy="4.5558316808026604834e-17 0.26179938779915029601 1.5707963267948972241" />
+<origin xyz="-0.036130376160144805908 0.030409909784793798249 0.0019046843051910289368" rpy="0 -0 0" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description/part_1.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0.0046995624076370126967 -0.0127464366488811362 7.0281770775781904348e-05" rpy="1.570796326794896558 6.9388939039072106591e-18 1.57079632679489678" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_4.stl"/>
-</geometry>
-<material name="part_4_material">
-<color rgba="0.10196078431372548878 0.10196078431372548878 0.10196078431372548878 1.0"/>
-</material>
-</visual>
-<collision>
-<origin xyz="0.0046995624076370126967 -0.0127464366488811362 7.0281770775781904348e-05" rpy="1.570796326794896558 6.9388939039072106591e-18 1.57079632679489678" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_4.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0.024010805815751691539 -0.022989823448970415909 0.057720281770775795638" rpy="1.5265566588595907361e-16 -1.1102230246251528426e-16 1.5707963267948970021" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_4.stl"/>
-</geometry>
-<material name="part_4_material">
-<color rgba="0.10196078431372548878 0.10196078431372548878 0.10196078431372548878 1.0"/>
-</material>
-</visual>
-<collision>
-<origin xyz="0.024010805815751691539 -0.022989823448970415909 0.057720281770775795638" rpy="1.5265566588595907361e-16 -1.1102230246251528426e-16 1.5707963267948970021" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_4.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="-0.023389194184248271458 -0.033239823448966004937 0.14675457998211244304" rpy="1.5707963267948961139 1.570796326794896558 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_4.stl"/>
-</geometry>
-<material name="part_4_material">
-<color rgba="0.10196078431372548878 0.10196078431372548878 0.10196078431372548878 1.0"/>
-</material>
-</visual>
-<collision>
-<origin xyz="-0.023389194184248271458 -0.033239823448966004937 0.14675457998211244304" rpy="1.5707963267948961139 1.570796326794896558 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_4.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0.0024954751487812230556 -0.0127464366488811362 -0.024929718229224233361" rpy="-6.9388939039072091183e-18 1.8248186223069056971e-32 3.1225022567582522769e-16" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/base.stl"/>
-</geometry>
-<material name="base_material">
-<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
-</material>
-</visual>
-<collision>
-<origin xyz="0.0024954751487812230556 -0.0127464366488811362 -0.024929718229224233361" rpy="-6.9388939039072091183e-18 1.8248186223069056971e-32 3.1225022567582522769e-16" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/base.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="-0.028389194184248314062 -0.033239823448968627839 0.10689943715030988947" rpy="-1.1241008124329652779e-15 5.5511151231258152426e-16 1.570796326794896558" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_1.stl"/>
-</geometry>
-<material name="part_1_material">
-<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
-</material>
-</visual>
-<collision>
-<origin xyz="-0.028389194184248314062 -0.033239823448968627839 0.10689943715030988947" rpy="-1.1241008124329652779e-15 5.5511151231258152426e-16 1.570796326794896558" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description/part_1.stl"/>
+<mesh filename="file://$(find kai)/src/description/torso_quadruped.stl"/>
 </geometry>
 </collision>
 <inertial>
-<origin xyz="0.004385592112578333597 -0.013754314787005145204 -0.00025754575482095614768" rpy="0 0 0"/>
-<mass value="0.35691348048155974171" />
-<inertia ixx="0.0010085443987140542844" ixy="-5.7506092786106468399e-06"  ixz="-1.5133611618532640409e-05" iyy="0.0013371063292257055234" iyz="4.4777038387760467525e-05" izz="0.00079109333616187609613" />
+<origin xyz="-0.036130376160144819786 0.030409909784793829474 0.057460239860746588347" rpy="0 0 0"/>
+<mass value="229.02210444669583467" />
+<inertia ixx="14.921779706388115017" ixy="-1.1296212912192718631e-16"  ixz="0" iyy="14.921779706388115017" iyz="0" izz="29.30634706901237152" />
 </inertial>
 </link>
+
+<link name="shoulder">
+<visual>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+<material name="shoulder_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-3.7347681414163801479e-19 0.027929396093619211772 -0.095649350649350664555" rpy="0 0 0"/>
+<mass value="10.885618544688634657" />
+<inertia ixx="0.067417122752900543459" ixy="0"  ixz="0" iyy="0.075908462192995490581" iyz="0.0092341600956555008189" izz="0.043109319895117424737" />
+</inertial>
+</link>
+
+<link name="upperlimb">
+<visual>
+<origin xyz="-2.7755575615628913511e-17 0 0" rpy="1.570796326794896558 -1.3866695599588098142e-32 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+<material name="upperlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-2.7755575615628913511e-17 0 0" rpy="1.570796326794896558 -1.3866695599588098142e-32 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-3.0199548200490966469e-17 -0.50000000000000011102 -0.041859986609857721684" rpy="0 0 0"/>
+<mass value="48.066367599923843557" />
+<inertia ixx="5.204489452505125513" ixy="7.5329015287179125501e-65"  ixz="4.77234078996466133e-32" iyy="0.15045227104254318973" iyz="-1.6297108726339258397e-32" izz="5.2887141526857410767" />
+</inertial>
+</link>
+
+<link name="lowerlimb">
+<visual>
+<origin xyz="-2.2204460492503130808e-16 1.5250000000000001332 -6.9388939039072283776e-18" rpy="1.570796326794896558 -4.6222318665293660473e-33 -5.5511151231257827021e-17" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+<material name="lowerlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-2.2204460492503130808e-16 1.5250000000000001332 -6.9388939039072283776e-18" rpy="1.570796326794896558 -4.6222318665293660473e-33 -5.5511151231257827021e-17" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-1.8119986468310394014e-16 0.86258161512027486939 -0.029947488034416908098" rpy="0 0 0"/>
+<mass value="82.278311597516690767" />
+<inertia ixx="21.219064546212177191" ixy="-1.311509423411429174e-15"  ixz="3.2448260781278849915e-17" iyy="0.32911778625415533117" iyz="-0.58453590065355076622" izz="21.292856017780909639" />
+</inertial>
+</link>
+
+<joint name="lowerlimb1" type="revolute">
+<origin xyz="8.3266726846886740532e-17 -1.0000000000000004441 3.4694469519536141888e-18" rpy="-3.141592653589793116 7.9073280062811715521e-17 -2.4434609527920607697" />
+<parent link="upperlimb" />
+<child link="lowerlimb" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-2.0943951023931952626" upper="-0.69813170079773179122"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="upperlimb1" type="revolute">
+<origin xyz="0 6.9388939039072283776e-18 -0.1500000000000000222" rpy="1.570796326794896558 0.34906585039886578459 3.141592653589793116" />
+<parent link="shoulder" />
+<child link="upperlimb" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-1.570796326794896558" upper="-0.34906585039886589561"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="shoulder1" type="revolute">
+<origin xyz="0.3638696238398552163 0.030409909784793860699 0.15190468430519105114" rpy="3.141592653589793116 -0 0" />
+<parent link="torso_quadruped" />
+<child link="shoulder" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-0.785398163397448279" upper="0.785398163397448279"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="shoulder_2">
+<visual>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+<material name="shoulder_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-3.7347681414163801479e-19 0.027929396093619211772 -0.095649350649350664555" rpy="0 0 0"/>
+<mass value="10.885618544688634657" />
+<inertia ixx="0.067417122752900543459" ixy="0"  ixz="0" iyy="0.075908462192995490581" iyz="0.0092341600956555008189" izz="0.043109319895117424737" />
+</inertial>
+</link>
+
+<link name="upperlimb_2">
+<visual>
+<origin xyz="-5.5511151231257827021e-17 5.5511151231257827021e-17 0" rpy="1.570796326794896558 -1.5407439555097886824e-32 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+<material name="upperlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-5.5511151231257827021e-17 5.5511151231257827021e-17 0" rpy="1.570796326794896558 -1.5407439555097886824e-32 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-5.7955123816119879979e-17 -0.5 -0.041859986609857721684" rpy="0 0 0"/>
+<mass value="48.066367599923843557" />
+<inertia ixx="5.204489452505125513" ixy="0"  ixz="9.6484965380956476748e-32" iyy="0.15045227104254318973" iyz="0" izz="5.2887141526857410767" />
+</inertial>
+</link>
+
+<link name="lowerlimb_2">
+<visual>
+<origin xyz="0 1.5249999999999999112 0" rpy="1.570796326794896558 3.8518598887744717061e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+<material name="lowerlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 1.5249999999999999112 0" rpy="1.570796326794896558 3.8518598887744717061e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="4.0731331005033949627e-18 0.86258161512027475837 -0.029947488034416901159" rpy="0 0 0"/>
+<mass value="82.278311597516690767" />
+<inertia ixx="21.219064546212177191" ixy="-1.1534501519517249664e-16"  ixz="1.3151159122921389015e-31" iyy="0.32911778625415522015" iyz="-0.58453590065355065519" izz="21.292856017780909639" />
+</inertial>
+</link>
+
+<joint name="lowerlimb2" type="revolute">
+<origin xyz="5.5511151231257827021e-17 -1 -6.9388939039072283776e-18" rpy="-3.141592653589793116 7.9073280062811740173e-17 -2.4434609527920607697" />
+<parent link="upperlimb_2" />
+<child link="lowerlimb_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-2.0943951023931952626" upper="-0.69813170079773179122"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="upperlimb2" type="revolute">
+<origin xyz="0 6.9388939039072283776e-18 -0.1500000000000000222" rpy="1.570796326794896558 0.34906585039886578459 3.141592653589793116" />
+<parent link="shoulder_2" />
+<child link="upperlimb_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-1.570796326794896558" upper="-0.34906585039886589561"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="shoulder2" type="revolute">
+<origin xyz="-0.036130376160144812847 0.43040990978479387596 0.15190468430519105114" rpy="3.141592653589793116 -0 1.570796326794896558" />
+<parent link="torso_quadruped" />
+<child link="shoulder_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-0.785398163397448279" upper="0.785398163397448279"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="shoulder_3">
+<visual>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+<material name="shoulder_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-3.7347681414163801479e-19 0.027929396093619211772 -0.095649350649350664555" rpy="0 0 0"/>
+<mass value="10.885618544688634657" />
+<inertia ixx="0.067417122752900543459" ixy="0"  ixz="0" iyy="0.075908462192995490581" iyz="0.0092341600956555008189" izz="0.043109319895117424737" />
+</inertial>
+</link>
+
+<link name="upperlimb_3">
+<visual>
+<origin xyz="2.7755575615628913511e-17 1 0" rpy="1.570796326794896558 -6.1629758220391547298e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+<material name="upperlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.7755575615628913511e-17 1 0" rpy="1.570796326794896558 -6.1629758220391547298e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="2.5311603030766860552e-17 0.49999999999999983347 -0.041859986609857721684" rpy="0 0 0"/>
+<mass value="48.066367599923843557" />
+<inertia ixx="5.204489452505125513" ixy="0"  ixz="8.0966468840864658699e-32" iyy="0.15045227104254318973" iyz="0" izz="5.2887141526857410767" />
+</inertial>
+</link>
+
+<link name="lowerlimb_3">
+<visual>
+<origin xyz="2.2204460492503130808e-16 1.5249999999999999112 0" rpy="1.570796326794896558 -0 -5.5511151231257827021e-17" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+<material name="lowerlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.2204460492503130808e-16 1.5249999999999999112 0" rpy="1.570796326794896558 -0 -5.5511151231257827021e-17" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="2.6288934516695870068e-16 0.86258161512027475837 -0.029947488034416901159" rpy="0 0 0"/>
+<mass value="82.278311597516690767" />
+<inertia ixx="21.219064546212177191" ixy="-1.311509423411429174e-15"  ixz="3.2448260781278683515e-17" iyy="0.32911778625415533117" iyz="-0.58453590065355076622" izz="21.292856017780909639" />
+</inertial>
+</link>
+
+<joint name="lowerlimb3" type="revolute">
+<origin xyz="2.7755575615628913511e-17 1.000000000000000222 -6.9388939039072283776e-18" rpy="3.141592653589793116 4.3391399851923562056e-17 0.69813170079773245735" />
+<parent link="upperlimb_3" />
+<child link="lowerlimb_3" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-2.0943951023931952626" upper="-0.69813170079773179122"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="upperlimb3" type="revolute">
+<origin xyz="-5.5511151231257827021e-17 6.9388939039072283776e-18 -0.15000000000000007772" rpy="-1.570796326794896558 -0.34906585039886578459 6.5162095139319294904e-17" />
+<parent link="shoulder_3" />
+<child link="upperlimb_3" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-1.570796326794896558" upper="-0.34906585039886589561"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="shoulder3" type="revolute">
+<origin xyz="-0.036130376160144798969 -0.36959009021520616844 0.15190468430519105114" rpy="3.141592653589793116 -0 -1.570796326794896558" />
+<parent link="torso_quadruped" />
+<child link="shoulder_3" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-0.785398163397448279" upper="0.785398163397448279"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="shoulder_4">
+<visual>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+<material name="shoulder_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 6.9388939039072283776e-18 0" rpy="3.141592653589793116 -0 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/shoulder.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-3.7347681414163801479e-19 0.027929396093619211772 -0.095649350649350664555" rpy="0 0 0"/>
+<mass value="10.885618544688634657" />
+<inertia ixx="0.067417122752900543459" ixy="0"  ixz="0" iyy="0.075908462192995490581" iyz="0.0092341600956555008189" izz="0.043109319895117424737" />
+</inertial>
+</link>
+
+<link name="upperlimb_4">
+<visual>
+<origin xyz="0 1 -3.4694469519536141888e-18" rpy="1.570796326794896558 -6.1629758220391547298e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+<material name="upperlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 1 -3.4694469519536141888e-18" rpy="1.570796326794896558 -6.1629758220391547298e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/upperlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-2.4439725848620537286e-18 0.49999999999999983347 -0.041859986609857721684" rpy="0 0 0"/>
+<mass value="48.066367599923843557" />
+<inertia ixx="5.204489452505125513" ixy="0"  ixz="8.0966468840864658699e-32" iyy="0.15045227104254318973" iyz="0" izz="5.2887141526857410767" />
+</inertial>
+</link>
+
+<link name="lowerlimb_4">
+<visual>
+<origin xyz="0 1.5249999999999999112 0" rpy="1.570796326794896558 6.1629758220391547298e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+<material name="lowerlimb_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 1.5249999999999999112 0" rpy="1.570796326794896558 6.1629758220391547298e-33 0" />
+<geometry>
+<mesh filename="file://$(find kai)/src/description/lowerlimb.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="4.0731331005033949627e-18 0.86258161512027475837 -0.029947488034416901159" rpy="0 0 0"/>
+<mass value="82.278311597516690767" />
+<inertia ixx="21.219064546212177191" ixy="-1.1534501519517249664e-16"  ixz="4.5477505515078708538e-34" iyy="0.32911778625415522015" iyz="-0.58453590065355065519" izz="21.292856017780909639" />
+</inertial>
+</link>
+
+<joint name="lowerlimb4" type="revolute">
+<origin xyz="2.7755575615628913511e-16 0.99999999999999988898 3.4694469519536141888e-18" rpy="3.141592653589793116 4.339139985192361136e-17 0.69813170079773234633" />
+<parent link="upperlimb_4" />
+<child link="lowerlimb_4" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-2.0943951023931952626" upper="-0.69813170079773179122"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="upperlimb4" type="revolute">
+<origin xyz="-5.5511151231257827021e-17 6.9388939039072283776e-18 -0.14999999999999985567" rpy="-1.570796326794896558 -0.34906585039886578459 6.5162095139319294904e-17" />
+<parent link="shoulder_4" />
+<child link="upperlimb_4" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-1.570796326794896558" upper="-0.34906585039886589561"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="shoulder4" type="revolute">
+<origin xyz="-0.43613037616014482811 0.030409909784793846821 0.15190468430519105114" rpy="3.141592653589793116 -0 3.141592653589793116" />
+<parent link="torso_quadruped" />
+<child link="shoulder_4" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-0.785398163397448279" upper="0.785398163397448279"/>
+<joint_properties friction="0.0"/>
+</joint>
 
 
 </robot>
