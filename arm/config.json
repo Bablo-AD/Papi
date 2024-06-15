@@ -1,4 +1,5 @@
 {
     "documentId": "03a127125174c26a253f3bf0",
-    "outputFormat": "urdf"
+    "outputFormat": "urdf",
+    "assemblyName": "finalassembly"
 }

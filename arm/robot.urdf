@@ -1,634 +1,149 @@
 <robot name="onshape">
-<link name="body">
-<collision>
-<origin xyz="0 3.4694469519536141888e-18 0.028600000000000000422" rpy="3.141592653589793116 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//body.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//body.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-2.2119967931223771722e-18 -0.048499999999999994504 0.014300000000000000211" rpy="-4.9303806576313237838e-31 5.8832537569162158278e-29 1.4935517544501890619" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-1.9901530713824361913e-18 -0.048500000000000001443 0.014300000000000005415" rpy="0 -0 -3.141592653589793116" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0.048500000000000036138 1.7692448094875078874e-17 0.014299999999999998476" rpy="-1.2052244095553763824e-16 -1.608122649676493373e-16 1.4522779945948964819" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0.048500000000000001443 1.0697461435191625184e-17 0.01430000000000000368" rpy="0 -0 -1.570796326794896336" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="1.3617105070248128711e-17 0.04850000000000014716 0.014299999999999998476" rpy="0 -0 1.4935517544501883958" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-9.540979117872446723e-18 0.048500000000000063893 0.01430000000000000368" rpy="0 -0 8.326672684688658276e-16" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.048499999999999987566 2.4012164913245588314e-18 0.014299999999999995007" rpy="1.4089504427648368436e-15 3.0379185904111655714e-16 1.4935517544501888398" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.048500000000000008382 -3.6140072414750383822e-18 0.014300000000000000211" rpy="1.4554650149047266776e-17 3.6115130309995309768e-16 1.57079632679489678" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
+<link name="mg995">
 <visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
+<origin xyz="0.014246661106962986085 0.018148050393590749174 0.079500000000000098366" rpy="2.9673693176031182817e-16 2.0210363832494955364e-17 -1.0512745417145308302" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description//body_visual.stl"/>
+<mesh filename="package:///mg995.stl"/>
 </geometry>
-<material name="body_material">
-<color rgba="0.54644525242796060382 0.49070311698568169767 0.42460182362935078304 1.0"/>
+<material name="mg995_material">
+<color rgba="0.10980392156862744946 0.10980392156862744946 0.10980392156862744946 1.0"/>
 </material>
 </visual>
+<collision>
+<origin xyz="0.014246661106962986085 0.018148050393590749174 0.079500000000000098366" rpy="2.9673693176031182817e-16 2.0210363832494955364e-17 -1.0512745417145308302" />
+<geometry>
+<mesh filename="package:///mg995.stl"/>
+</geometry>
+</collision>
 <inertial>
-<origin xyz="-4.0218407731343161268e-18 1.9732740571688989735e-18 0.014338409612449538877" rpy="0 0 0"/>
-<mass value="0.080873577571338797765" />
-<inertia ixx="7.3740766846903802638e-05" ixy="-7.5838822576734749239e-21"  ixz="-2.1175823681357508477e-21" iyy="7.3740766846903802638e-05" iyz="1.6116933669515591974e-21" izz="0.00013587762638326357674" />
+<origin xyz="-0.0022603466340449626833 0.0085140121381946896884 0.079500007367540773129" rpy="0 0 0"/>
+<mass value="0.058000000000000002942" />
+<inertia ixx="9.6824739598764522283e-06" ixy="4.289189438683360203e-07"  ixz="2.714631065959707068e-12" iyy="9.0363456563254120714e-06" iyz="6.5738451268317901709e-12" izz="1.4928256821169687632e-05" />
 </inertial>
 </link>
 
-<link name="trunk">
+<link name="mg995_2">
+<visual>
+<origin xyz="-0.010000000000000000208 1.5407439555097886824e-33 -0.044499999999999990952" rpy="-1.570796326794896558 -4.8617306858290169587e-63 2.1849301382993296918e-62" />
+<geometry>
+<mesh filename="package:///mg995.stl"/>
+</geometry>
+<material name="mg995_material">
+<color rgba="0.10980392156862744946 0.10980392156862744946 0.10980392156862744946 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.010000000000000000208 1.5407439555097886824e-33 -0.044499999999999990952" rpy="-1.570796326794896558 -4.8617306858290169587e-63 2.1849301382993296918e-62" />
+<geometry>
+<mesh filename="package:///mg995.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-0.0098322614521223448969 7.3675406714344509814e-09 -0.025388017856651561022" rpy="0 0 0"/>
+<mass value="0.058000000000000002942" />
+<inertia ixx="8.8259081181983891712e-06" ixy="-4.3587507591215502402e-12"  ixz="-6.0974203095532659703e-08" iyy="1.4928256821169738454e-05" iyz="-5.6201381977063910251e-12" izz="9.8929114980025840498e-06" />
+</inertial>
+</link>
+
+<link name="base">
 <inertial>
 <origin xyz="0 0 0" rpy="0 0 0" />
 <mass value="1e-9" />
 <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
 </inertial>
 </link>
-<joint name="trunk_frame" type="fixed">
-<origin xyz="-1.4643698325215069117e-18 8.9196445764352381032e-20 0.014799999999999997186" rpy="0 -0 0" />
-<parent link="body" />
-<child link="trunk" />
+<joint name="base_frame" type="fixed">
+<origin xyz="-0.010000000000000000208 0.0022040872588557753296 -0.069499999999999992339" rpy="5.3926038442842590201e-33 -5.3926038442842289141e-33 -1.570796326794896558" />
+<parent link="mg995_2" />
+<child link="base" />
 <axis xyz="0 0 0"/>
 </joint>
 
-<link name="doubleu">
-<collision>
-<origin xyz="0 -0.018000000000000002109 -0.01615000000000000116" rpy="1.570796326794896558 -1.8460368688093640589e-32 4.1336450247962590154e-30" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-4.2315519506512562933e-18 -0.022599999999999995093 -0.016149999999999994221" rpy="-1.57079632679489678 -1.570796326794896336 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//doubleu_visual.stl"/>
-</geometry>
-<material name="doubleu_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="9.4791479225693088822e-19 -0.020300000000000002071 -0.016149999999999994221" rpy="0 0 0"/>
-<mass value="0.0083069793159379606146" />
-<inertia ixx="2.7836127023230778845e-06" ixy="-2.6408817562185879865e-22"  ixz="-2.6439392730879946578e-22" iyy="1.92550292321598e-06" iyz="1.7062011958800580701e-22" izz="2.7836127023230795785e-06" />
-</inertial>
-</link>
-
-<link name="platesblock">
-<collision>
-<origin xyz="0.014300000000000753081 0.0060000000000017955637 0.014999999999999699338" rpy="1.57079632679489678 -1.2680181022452749894e-14 -1.5707963267947644415" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.012000000000000531075 0.0059999999999988812283 0.015000000000000006384" rpy="1.57079632679489678 2.3918290456804076481e-16 -1.5707963267947644415" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 0 0.014999999999999999445" rpy="4.7960554272225975203e-30 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="2.6714741530042829254e-16 4.7184478546569152968e-16 0.015000000000000004649" rpy="5.5511151232185712335e-17 -5.5511151226576923625e-17 1.3221246436712787292e-13" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="9.9347613469191742297e-15 -0.062999999999998224087 0.015000000000000575373" rpy="1.0935212786447188942e-14 -7.2289564219676081109e-15 -2.5577185454918884844" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="9.9364960703951510368e-15 -0.062999999999998224087 0.015000000000000577108" rpy="1.3063624256422690018e-14 5.5511151226580079068e-17 -3.1415926535896612215" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//platesblock_visual.stl"/>
-</geometry>
-<material name="platesblock_material">
-<color rgba="0.56009960716362372501 0.49194352283988845853 0.411121263553335059 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="5.095586546298484245e-15 -0.03149999999999894551 0.015037178789082212768" rpy="0 0 0"/>
-<mass value="0.041775469947023406714" />
-<inertia ixx="2.9827908403380252143e-05" ixy="-2.9977310042298104407e-12"  ixz="-9.4092084473849040008e-21" iyy="4.6241019816153099327e-06" iyz="2.3229878578449186799e-19" izz="2.9982829083330687632e-05" />
-</inertial>
-</link>
-
-<link name="leg">
-<collision>
-<origin xyz="0 0 0.014999999999999999445" rpy="1.570796326794896558 -2.2511622207665070524e-32 3.796393106376074472e-30" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg_visual.stl"/>
-</geometry>
-<material name="leg_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-1.8294146588797701012e-17 0.053378571500788223048 0.014999999999999983832" rpy="0 0 0"/>
-<mass value="0.015416190496614969388" />
-<inertia ixx="2.1381616736745932914e-05" ixy="6.7036356351951848041e-35"  ixz="5.7657415073132168911e-38" iyy="3.58407063578448847e-06" iyz="-1.772139271195867984e-34" izz="1.8820387939403853263e-05" />
-</inertial>
-</link>
-
-<joint name="leg1_c" type="revolute">
-<origin xyz="9.9364960703951510368e-15 -0.062999999999998446132 5.7592819402429995534e-16" rpy="1.3063624256424277206e-14 5.5511151229520040403e-17 3.141592653589678541" />
-<parent link="platesblock" />
-<child link="leg" />
+<joint name="baseyaw" type="revolute">
+<origin xyz="-1.3877787807814456755e-17 0.010000000000000005412 0.06950000000000011724" rpy="1.2325951644078287564e-32 -2.3111159332646792604e-33 1.570796326794896558" />
+<parent link="mg995" />
+<child link="mg995_2" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
+<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
 <joint_properties friction="0.0"/>
 </joint>
 
-<joint name="leg1_b" type="revolute">
-<origin xyz="0.014999999999999995975 -0.04060000000000001108 -0.016149999999999990752" rpy="-1.1102230246243919616e-16 -1.5707963267948821251 0" />
-<parent link="doubleu" />
-<child link="platesblock" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<joint name="leg1_a" type="revolute">
-<origin xyz="-0.048500000000000001443 -8.5303041146985879211e-18 -0.00070000000000000443812" rpy="-3.1415926535897917837 3.0518271446985186157e-16 1.5707963267949769381" />
-<parent link="body" />
-<child link="doubleu" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<link name="doubleu_2">
-<collision>
-<origin xyz="-4.731701148696949541e-17 -0.022599999999999981215 -0.014999999999999994241" rpy="-1.570796326794896558 -1.5707963267948925612 0" />
+<link name="assembly_1">
+<visual>
+<origin xyz="-4.4755865680201623036e-15 0.089034298211336168616 -2.0816681711721685133e-17" rpy="-1.5707963267948970021 -1.2806630172647252295e-15 1.5707963267948992225" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
+<mesh filename="package:///mg995.stl"/>
 </geometry>
-</collision>
+<material name="mg995_material">
+<color rgba="0.10980392156862744946 0.10980392156862744946 0.10980392156862744946 1.0"/>
+</material>
+</visual>
 <collision>
-<origin xyz="2.4651903288156618919e-32 -0.018000000000000002109 -0.014999999999999999445" rpy="1.570796326794896558 1.4428178180529642291e-33 -2.0313110941267112869e-32" />
+<origin xyz="-4.4755865680201623036e-15 0.089034298211336168616 -2.0816681711721685133e-17" rpy="-1.5707963267948970021 -1.2806630172647252295e-15 1.5707963267948992225" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
+<mesh filename="package:///mg995.stl"/>
 </geometry>
 </collision>
 <visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
+<origin xyz="-2.6229018956769323268e-15 0.049855142831802229386 -3.4694469519536141888e-18" rpy="1.570796326794896558 -1.1903935229434375023e-17 1.2883445191167409088e-18" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description//doubleu_2_visual.stl"/>
+<mesh filename="package:///outarm.stl"/>
 </geometry>
-<material name="doubleu_2_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
+<material name="outarm_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
 </material>
 </visual>
+<collision>
+<origin xyz="-2.6229018956769323268e-15 0.049855142831802229386 -3.4694469519536141888e-18" rpy="1.570796326794896558 -1.1903935229434375023e-17 1.2883445191167409088e-18" />
+<geometry>
+<mesh filename="package:///outarm.stl"/>
+</geometry>
+</collision>
 <inertial>
-<origin xyz="-2.059481497590216787e-17 -0.020299999999999974315 -0.014999999999999994241" rpy="0 0 0"/>
-<mass value="0.0083069793159379606146" />
-<inertia ixx="2.7836127023230622143e-06" ixy="-2.1069590312366227382e-21"  ixz="-2.6922189709145257254e-22" iyy="1.9255029232159694121e-06" iyz="5.37458002488160944e-21" izz="2.7836127023230685671e-06" />
+<origin xyz="-6.0383965149810555361e-09 0.082046802534002719054 0.015213052205729072144" rpy="0 0 0"/>
+<mass value="0.070766740240779890669" />
+<inertia ixx="5.0581928568000257952e-05" ixy="7.4163072495688462003e-12"  ixz="7.2862191653951591525e-12" iyy="1.4192326667764486103e-05" iyz="-9.0300242728862691033e-06" izz="4.1085228957357451294e-05" />
 </inertial>
 </link>
 
-<link name="platesblock_2">
-<collision>
-<origin xyz="0.0059999999999991726618 -0.014300000000000964717 0.015000000000000009853" rpy="1.57079632679489678 -1.3415194786805465657e-16 -3.1415926535897904515" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0.0059999999999990755173 0.012000000000000392297 0.015000000000000011588" rpy="1.57079632679489678 7.6327833037065985965e-16 -3.1415926535897904515" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 0 0.01500000000000000118" rpy="1.2210395847412614278e-31 -5.7996170381514649495e-31 7.1490519535672184034e-31" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-8.7430063189231077558e-16 3.6255720647915268273e-16 0.015000000000000008119" rpy="-1.1102230246260797542e-16 -1.1102230246238832696e-16 -1.5707963267948938935" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.063000000000000888623 -1.1414480471927390681e-15 0.015000000000000176387" rpy="-3.4361908696736764171e-15 1.0281786599845804513e-14 1.87534874134578744" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.063000000000000888623 -1.1431827706687158752e-15 0.015000000000000020262" rpy="-4.6476591398093611411e-15 1.1102230246239148241e-16 1.5707963267948994446" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
+<link name="outarm">
 <visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
+<origin xyz="0.049179155379533628922 1.8457457784393227485e-15 3.4694469519536141888e-18" rpy="1.570796326794896558 -5.0490281934899054697e-18 1.570796326794896558" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description//platesblock_2_visual.stl"/>
+<mesh filename="package:///outarm.stl"/>
 </geometry>
-<material name="platesblock_2_material">
-<color rgba="0.56009960716362372501 0.49194352283988845853 0.411121263553335059 1.0"/>
+<material name="outarm_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
 </material>
 </visual>
-<inertial>
-<origin xyz="-0.031500000000000867584 -3.944670519655384207e-16 0.01503717878908201501" rpy="0 0 0"/>
-<mass value="0.041775469947023406714" />
-<inertia ixx="4.6241019816153200971e-06" ixy="2.9977342618590154287e-12"  ixz="2.1493461036577871104e-20" iyy="2.9827908403381536245e-05" iyz="-2.3747440055311878501e-21" izz="2.9982829083331893807e-05" />
-</inertial>
-</link>
-
-<link name="leg_2">
 <collision>
-<origin xyz="0 0 0.014999999999999999445" rpy="1.570796326794896558 -3.9288970865567267844e-32 4.930380657620253526e-32" />
+<origin xyz="0.049179155379533628922 1.8457457784393227485e-15 3.4694469519536141888e-18" rpy="1.570796326794896558 -5.0490281934899054697e-18 1.570796326794896558" />
 <geometry>
-<mesh filename="file://$(find kai)/src/description//leg.stl"/>
+<mesh filename="package:///outarm.stl"/>
 </geometry>
 </collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg_2_visual.stl"/>
-</geometry>
-<material name="leg_2_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
 <inertial>
-<origin xyz="-1.8294146588797497634e-17 0.053378571500788223048 0.014999999999999983832" rpy="0 0 0"/>
-<mass value="0.015416190496614969388" />
-<inertia ixx="2.1381616736745932914e-05" ixy="7.0077844510925861501e-37"  ixz="1.2605240019193199238e-36" iyy="3.58407063578448847e-06" iyz="1.0248077089240173416e-36" izz="1.8820387939403853263e-05" />
+<origin xyz="0.049494116571571072916 1.9966477129750254427e-15 -0.0024999999999999965826" rpy="0 0 0"/>
+<mass value="0.012766740240779891197" />
+<inertia ixx="4.7912950654648192505e-07" ixy="1.6195445818671237441e-21"  ixz="-1.5771206474075743739e-22" iyy="1.4306570639020512877e-05" iyz="5.2019280474227799155e-25" izz="1.473250539456373924e-05" />
 </inertial>
 </link>
 
-<joint name="leg2_c" type="revolute">
-<origin xyz="-0.063000000000000833111 -1.1431827706687158752e-15 -2.6020852139652106416e-17" rpy="-4.3701033836453892897e-15 3.8857805861913566699e-16 1.5707963267949571762" />
-<parent link="platesblock_2" />
-<child link="leg_2" />
+<joint name="outarm" type="revolute">
+<origin xyz="-3.9621084191310274036e-15 0.099034298211335899942 0.044499999999999789724" rpy="-3.1415926535897900074 -2.1456705084130752623e-15 0.77445109514413923435" />
+<parent link="assembly_1" />
+<child link="outarm" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
+<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
 <joint_properties friction="0.0"/>
 </joint>
 
-<joint name="leg2_b" type="revolute">
-<origin xyz="0.014999999999999822503 -0.040599999999999900058 -0.014999999999999987302" rpy="-1.5707963267948972241 -5.7731597321359112752e-15 1.570796326794896558" />
-<parent link="doubleu_2" />
-<child link="platesblock_2" />
+<joint name="motor2" type="revolute">
+<origin xyz="-0.01941721109241918708 -0.012625212490669088933 0.079500000000000237144" rpy="1.5707963267948970021 -0.45450288711037684086 2.0903181118752649503" />
+<parent link="mg995" />
+<child link="assembly_1" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<joint name="leg2_a" type="revolute">
-<origin xyz="-4.7534429693212828567e-19 -0.048499999999999966749 -0.00069999999999998015199" rpy="3.1415926535897913396 1.8612014973548229466e-16 -3.1415926535897900074" />
-<parent link="body" />
-<child link="doubleu_2" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<link name="doubleu_3">
-<collision>
-<origin xyz="-6.1868272634951493073e-18 0.022600000000000002032 -0.01615000000000000463" rpy="1.5707963267948956698 1.5707963267948947816 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 0.018000000000000009048 -0.016149999999999997691" rpy="-1.570796326794896558 7.395570986577385256e-32 -1.1463135029113411282e-30" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//doubleu_3_visual.stl"/>
-</geometry>
-<material name="doubleu_3_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-2.9722864165018194737e-20 0.020300000000000002071 -0.01615000000000000463" rpy="0 0 0"/>
-<mass value="0.0083069793159379606146" />
-<inertia ixx="2.7836127023230757669e-06" ixy="8.6038139268121153898e-22"  ixz="-5.9536510830443790895e-22" iyy="1.9255029232159770354e-06" iyz="-1.7751443549616595452e-21" izz="2.7836127023230744963e-06" />
-</inertial>
-</link>
-
-<link name="platesblock_3">
-<collision>
-<origin xyz="0.0059999999999991171507 -0.014300000000001160741 0.015000000000000037609" rpy="1.570796326794896336 1.2490434624806634873e-15 -3.1415926535897744643" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0.0059999999999986175503 0.012000000000000173722 0.014999999999999994241" rpy="1.570796326794896336 -1.7994864857424962181e-15 -3.1415926535897740202" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 0 0.014999999999999999445" rpy="4.3528894987641800105e-32 -2.049003641233141075e-30 -8.0118685657279239239e-32" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-1.1518563880485999107e-15 5.3776427755281019927e-17 0.01500000000000000118" rpy="6.4813142466077991495e-29 3.330669073851336394e-16 -1.5707963267948774622" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.063000000000000916378 -2.6124935548210714842e-15 0.01500000000000006016" rpy="-5.4854650832091907558e-15 6.1461465386434847694e-15 3.0643480814077421748" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.063000000000000916378 -2.6142282782970482913e-15 0.014999999999999963016" rpy="-1.1428908403314428341e-14 -3.3306690738513388592e-16 1.5707963267949158759" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//platesblock_3_visual.stl"/>
-</geometry>
-<material name="platesblock_3_material">
-<color rgba="0.56009960716362372501 0.49194352283988845853 0.411121263553335059 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-0.031500000000001020239 -1.2628962025460010081e-15 0.015037178789082009805" rpy="0 0 0"/>
-<mass value="0.041775469947023406714" />
-<inertia ixx="4.6241019816153150149e-06" ixy="2.9977338032685974891e-12"  ixz="3.0122609186731055808e-20" iyy="2.9827908403381282135e-05" iyz="-9.7604003861729641129e-21" izz="2.9982829083331639697e-05" />
-</inertial>
-</link>
-
-<link name="leg_3">
-<collision>
-<origin xyz="0 0 0.014999999999999999445" rpy="1.570796326794896558 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg_3_visual.stl"/>
-</geometry>
-<material name="leg_3_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-1.8294146588797491471e-17 0.053378571500788223048 0.014999999999999983832" rpy="0 0 0"/>
-<mass value="0.015416190496614969388" />
-<inertia ixx="2.1381616736745932914e-05" ixy="0"  ixz="0" iyy="3.58407063578448847e-06" iyz="-1.3504549728168127831e-34" izz="1.8820387939403853263e-05" />
-</inertial>
-</link>
-
-<link name="tip">
-<inertial>
-<origin xyz="0 0 0" rpy="0 0 0" />
-<mass value="1e-9" />
-<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
-</inertial>
-</link>
-<joint name="tip_frame" type="fixed">
-<origin xyz="0.0024999999999938803813 0.10049999999999997824 0.015000000000000080977" rpy="1.5707963267948958919 1.7002118011255032242e-29 1.5707963267948970021" />
-<parent link="leg_3" />
-<child link="tip" />
-<axis xyz="0 0 0"/>
-</joint>
-
-<joint name="leg3_c" type="revolute">
-<origin xyz="-0.063000000000000833111 -2.5413698923060223933e-15 6.2450045135165055399e-17" rpy="-6.4884159438865147166e-15 -5.0164905648933462902e-15 1.570796326794846598" />
-<parent link="platesblock_3" />
-<child link="leg_3" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<joint name="leg3_b" type="revolute">
-<origin xyz="-0.014999999999999995975 0.040599999999999962508 -0.016149999999999973405" rpy="-1.5707963267948987784 -4.0800696156351199247e-15 -1.570796326794896558" />
-<parent link="doubleu_3" />
-<child link="platesblock_3" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<joint name="leg3_a" type="revolute">
-<origin xyz="0.048500000000000015321 3.1975423522152530222e-17 -0.00069999999999999749922" rpy="-3.1415926535897922278 1.8873791418647224938e-15 1.5707963267949729413" />
-<parent link="body" />
-<child link="doubleu_3" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<link name="doubleu_4">
-<collision>
-<origin xyz="-9.728832374607579198e-17 0.022599999999999974276 -0.016149999999999983813" rpy="1.57079632679489678 1.5707963267948825692 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 0.018000000000000009048 -0.01615000000000000116" rpy="-1.570796326794896558 -2.4960628896087682547e-45 -1.1757557782862299879e-32" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//u.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//doubleu_4_visual.stl"/>
-</geometry>
-<material name="doubleu_4_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-4.5580471105455396274e-17 0.020299999999999974315 -0.016149999999999997691" rpy="0 0 0"/>
-<mass value="0.0083069793159379606146" />
-<inertia ixx="2.7836127023230495089e-06" ixy="4.288882294064238551e-21"  ixz="1.7419738944523623015e-22" iyy="1.9255029232159694121e-06" iyz="-1.8424871688407292201e-20" izz="2.7836127023230588262e-06" />
-</inertial>
-</link>
-
-<link name="platesblock_4">
-<collision>
-<origin xyz="0.0060000000000001579847 -0.014300000000001070535 0.013499999999999999847" rpy="1.570796326794891451 2.4526315914496118724e-15 -3.1415926535897900074" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0.0060000000000000192069 0.012000000000000196274 0.01350000000000013689" rpy="1.570796326794891451 7.592347551772247465e-16 -3.1415926535897900074" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//plate.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="0 1.7347234759768070944e-18 0.013499999999999999847" rpy="0 1.1170393681122520791e-32 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="9.7144514654701197287e-17 2.2551405187698492227e-16 0.013500000000000064032" rpy="6.3926734478688914477e-16 6.0821433796820630674e-15 -1.5707963267948932273" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.063000000000000055955 -1.3131856713144429705e-15 0.013499999999999899233" rpy="1.5066845813560124767e-15 5.9388906003750982745e-15 -1.8333913405676074415" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//horn.stl"/>
-</geometry>
-</collision>
-<collision>
-<origin xyz="-0.063000000000000194733 -1.3027773304585821279e-15 0.013499999999999894029" rpy="-3.0223918796304106275e-15 -5.1877660814676451477e-15 1.5707963267948998887" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//motor.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//platesblock_4_visual.stl"/>
-</geometry>
-<material name="platesblock_4_material">
-<color rgba="0.56009960716362372501 0.49194352283988845853 0.411121263553335059 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-0.031500000000000021039 -5.4317581755102504843e-16 0.013537178789081978983" rpy="0 0 0"/>
-<mass value="0.041775469947023406714" />
-<inertia ixx="4.6241019816152946861e-06" ixy="2.9977342452212903803e-12"  ixz="-6.5645053412208276278e-20" iyy="2.9827908403381783579e-05" iyz="5.5456177962084559968e-21" izz="2.9982829083332117423e-05" />
-</inertial>
-</link>
-
-<link name="leg_4">
-<collision>
-<origin xyz="0 0 0.014999999999999999445" rpy="-1.570796326794896558 -3.5745259768141408678e-31 4.1168678491237724579e-30" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg.stl"/>
-</geometry>
-</collision>
-<visual>
-<origin xyz="0 0 0" rpy="0 -0 0" />
-<geometry>
-<mesh filename="file://$(find kai)/src/description//leg_4_visual.stl"/>
-</geometry>
-<material name="leg_4_material">
-<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
-</material>
-</visual>
-<inertial>
-<origin xyz="-1.8294146588797269604e-17 -0.053378571500788223048 0.015000000000000015057" rpy="0 0 0"/>
-<mass value="0.015416190496614969388" />
-<inertia ixx="2.1381616736745932914e-05" ixy="7.318179117366590349e-35"  ixz="1.5066248578422603448e-35" iyy="3.58407063578448847e-06" iyz="-7.2575215299555984456e-36" izz="1.8820387939403853263e-05" />
-</inertial>
-</link>
-
-<joint name="leg4_c" type="revolute">
-<origin xyz="-0.063000000000000139222 -1.2247147740396258087e-15 -0.0015000000000001192935" rpy="2.8840583719806483615e-15 5.7349958115927569776e-15 -1.570796326794976272" />
-<parent link="platesblock_4" />
-<child link="leg_4" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<joint name="leg4_b" type="revolute">
-<origin xyz="-0.014999999999999815564 0.040599999999999893119 -0.016149999999999976874" rpy="-1.5707963267948970021 -9.6589403142381755927e-15 -1.570796326794896558" />
-<parent link="doubleu_4" />
-<child link="platesblock_4" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
-<joint_properties friction="0.0"/>
-</joint>
-
-<joint name="leg4_a" type="revolute">
-<origin xyz="3.8163916471489749914e-17 0.048500000000000251243 -0.00069999999999999923395" rpy="-3.1415926535897793492 -2.9385068719488614441e-29 -3.141592653589793116" />
-<parent link="body" />
-<child link="doubleu_4" />
-<axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" />
+<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
 <joint_properties friction="0.0"/>
 </joint>
 
