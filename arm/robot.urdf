@@ -3,7 +3,7 @@
 <visual>
 <origin xyz="0.014246661106962986085 0.018148050393590749174 0.079500000000000098366" rpy="2.9673693176031182817e-16 2.0210363832494955364e-17 -1.0512745417145308302" />
 <geometry>
-<mesh filename="package:///mg995.stl"/>
+<mesh filename="file://$(find kai)/src/description/mg995.stl"/>
 </geometry>
 <material name="mg995_material">
 <color rgba="0.10980392156862744946 0.10980392156862744946 0.10980392156862744946 1.0"/>
@@ -12,7 +12,7 @@
 <collision>
 <origin xyz="0.014246661106962986085 0.018148050393590749174 0.079500000000000098366" rpy="2.9673693176031182817e-16 2.0210363832494955364e-17 -1.0512745417145308302" />
 <geometry>
-<mesh filename="package:///mg995.stl"/>
+<mesh filename="file://$(find kai)/src/description/mg995.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -26,7 +26,7 @@
 <visual>
 <origin xyz="-0.010000000000000000208 1.5407439555097886824e-33 -0.044499999999999990952" rpy="-1.570796326794896558 -4.8617306858290169587e-63 2.1849301382993296918e-62" />
 <geometry>
-<mesh filename="package:///mg995.stl"/>
+<mesh filename="file://$(find kai)/src/description/mg995.stl"/>
 </geometry>
 <material name="mg995_material">
 <color rgba="0.10980392156862744946 0.10980392156862744946 0.10980392156862744946 1.0"/>
@@ -35,13 +35,13 @@
 <collision>
 <origin xyz="-0.010000000000000000208 1.5407439555097886824e-33 -0.044499999999999990952" rpy="-1.570796326794896558 -4.8617306858290169587e-63 2.1849301382993296918e-62" />
 <geometry>
-<mesh filename="package:///mg995.stl"/>
+<mesh filename="file://$(find kai)/src/description/mg995.stl"/>
 </geometry>
 </collision>
 <visual>
 <origin xyz="-0.010000000000000000208 0.0022040872588557892074 -0.069500000000000033973" rpy="1.3096323621833190116e-32 1.5407439555098338415e-33 -1.570796326794896336" />
 <geometry>
-<mesh filename="package:///base.stl"/>
+<mesh filename="file://$(find kai)/src/description/base.stl"/>
 </geometry>
 <material name="base_material">
 <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
@@ -50,7 +50,7 @@
 <collision>
 <origin xyz="-0.010000000000000000208 0.0022040872588557892074 -0.069500000000000033973" rpy="1.3096323621833190116e-32 1.5407439555098338415e-33 -1.570796326794896336" />
 <geometry>
-<mesh filename="package:///base.stl"/>
+<mesh filename="file://$(find kai)/src/description/base.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -87,7 +87,7 @@
 <visual>
 <origin xyz="-4.4755865680201623036e-15 0.089034298211336168616 -2.0816681711721685133e-17" rpy="-1.5707963267948970021 -1.2806630172647252295e-15 1.5707963267948992225" />
 <geometry>
-<mesh filename="package:///mg995.stl"/>
+<mesh filename="file://$(find kai)/src/description/mg995.stl"/>
 </geometry>
 <material name="mg995_material">
 <color rgba="0.10980392156862744946 0.10980392156862744946 0.10980392156862744946 1.0"/>
@@ -96,13 +96,13 @@
 <collision>
 <origin xyz="-4.4755865680201623036e-15 0.089034298211336168616 -2.0816681711721685133e-17" rpy="-1.5707963267948970021 -1.2806630172647252295e-15 1.5707963267948992225" />
 <geometry>
-<mesh filename="package:///mg995.stl"/>
+<mesh filename="file://$(find kai)/src/description/mg995.stl"/>
 </geometry>
 </collision>
 <visual>
 <origin xyz="-2.6229018956769323268e-15 0.049855142831802229386 -3.4694469519536141888e-18" rpy="1.570796326794896558 -1.1903935229434375023e-17 1.2883445191167409088e-18" />
 <geometry>
-<mesh filename="package:///outarm.stl"/>
+<mesh filename="file://$(find kai)/src/description/outarm.stl"/>
 </geometry>
 <material name="outarm_material">
 <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
@@ -111,7 +111,7 @@
 <collision>
 <origin xyz="-2.6229018956769323268e-15 0.049855142831802229386 -3.4694469519536141888e-18" rpy="1.570796326794896558 -1.1903935229434375023e-17 1.2883445191167409088e-18" />
 <geometry>
-<mesh filename="package:///outarm.stl"/>
+<mesh filename="file://$(find kai)/src/description/outarm.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -125,7 +125,7 @@
 <visual>
 <origin xyz="0.049179155379533628922 1.8457457784393227485e-15 3.4694469519536141888e-18" rpy="1.570796326794896558 -5.0490281934899054697e-18 1.570796326794896558" />
 <geometry>
-<mesh filename="package:///outarm.stl"/>
+<mesh filename="file://$(find kai)/src/description/outarm.stl"/>
 </geometry>
 <material name="outarm_material">
 <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
@@ -134,7 +134,7 @@
 <collision>
 <origin xyz="0.049179155379533628922 1.8457457784393227485e-15 3.4694469519536141888e-18" rpy="1.570796326794896558 -5.0490281934899054697e-18 1.570796326794896558" />
 <geometry>
-<mesh filename="package:///outarm.stl"/>
+<mesh filename="file://$(find kai)/src/description/outarm.stl"/>
 </geometry>
 </collision>
 <inertial>
