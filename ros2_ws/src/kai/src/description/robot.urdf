@@ -144,7 +144,7 @@
 </inertial>
 </link>
 
-<joint name="outarm" type="revolute">
+<joint name="outarm_joint" type="revolute">
 <origin xyz="-3.9621084191310274036e-15 0.099034298211335899942 0.044499999999999789724" rpy="-3.1415926535897900074 -2.1456705084130752623e-15 0.77445109514413923435" />
 <parent link="assembly_1" />
 <child link="outarm" />
