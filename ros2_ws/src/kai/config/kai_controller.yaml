@@ -1,0 +1,25 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 10  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    kai_controller: 
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+kai_controller:
+  ros__parameters:
+    joints:
+      - baseyaw
+      - motor2
+      - outarm_joint
+
+    command_interfaces:
+      - position
+      - velocity
+
+    state_interfaces:
+      - position
+      - velocity
