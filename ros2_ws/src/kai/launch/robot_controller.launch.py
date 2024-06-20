@@ -4,6 +4,11 @@ import launch_ros
 import os
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessExit
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
+
 
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='kai').find('kai')
@@ -73,7 +78,38 @@ def generate_launch_description():
             on_exit=[robot_controller_spawner],
         )
     )
+    gazebo_server = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('gazebo_ros'),
+                'launch',
+                'gzserver.launch.py'
+            ])
+        ]),
+        launch_arguments={
+            'pause': 'true'
+        }.items()
+    )
 
+    gazebo_client = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('gazebo_ros'),
+                'launch',
+                'gzclient.launch.py'
+            ])
+        ])
+    )
+
+    urdf_spawn_node = launch_ros.actions.Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=[
+            '-entity', 'kai',
+            '-topic', 'robot_description'
+        ],
+        output='screen'
+    )
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='gui', default_value='True',
                                             description='Flag to enable joint_state_publisher_gui'),
@@ -84,9 +120,12 @@ def generate_launch_description():
         joint_state_publisher_node,
         joint_state_publisher_gui_node,
         robot_state_publisher_node,
+        gazebo_server,
+        gazebo_client,
+        urdf_spawn_node,
         control_node,
         joint_state_broadcaster_spawner,
         delay_rviz_after_joint_state_broadcaster_spawner,
-        delay_robot_controller_spawner_after_joint_state_broadcaster_spawner
-
+        delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
+        
     ])

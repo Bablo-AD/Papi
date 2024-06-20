@@ -191,6 +191,12 @@
    <state_interface name="position"/>
  </joint>
 </ros2_control>
-
+<gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <parameters>$(find kai)/config/kai_controller.yaml</parameters>
+    </plugin>
+</gazebo>
 
 </robot>
