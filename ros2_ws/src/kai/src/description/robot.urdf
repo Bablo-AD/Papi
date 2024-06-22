@@ -67,6 +67,7 @@
 <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
 </inertial>
 </link>
+
 <joint name="baselink_frame" type="fixed">
 <origin xyz="-0.010000000000000000208 -1.3877787807814442889e-17 -0.072000000000000036193" rpy="-2.3111159332646792604e-33 -1.2325951644078287564e-32 -1.570796326794896558" />
 <parent link="assembly_2" />
@@ -162,10 +163,10 @@
 <joint_properties friction="0.0"/>
 </joint>
 
-<ros2_control name="kai" type="system">
+<ros2_control name="kai_controller" type="actuator">
 
  <hardware>
-   <plugin>joint_trajectory_controller/JointTrajectoryController</plugin>
+   <plugin>ros2_control_demo_hardware/PositionActuatorHardware</plugin>
    <param name="example_param_write_for_sec">2</param>
    <param name="example_param_read_for_sec">2</param>
  </hardware>
@@ -174,29 +175,27 @@
      <param name="min">0</param>
      <param name="max">3.141592653589793116</param>
    </command_interface>
-   <state_interface name="position"/>
  </joint>
  <joint name="motor2">
    <command_interface name="position">
      <param name="min">-2</param>
      <param name="max">1.141592653589793116</param>
    </command_interface>
-   <state_interface name="position"/>
  </joint>
  <joint name="outarm_joint">
    <command_interface name="position">
      <param name="min">-1</param>
      <param name="max">2.141592653589793116</param>
    </command_interface>
-   <state_interface name="position"/>
  </joint>
 </ros2_control>
-<gazebo>
-    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+
+<!-- <gazebo>
+    <plugin filename="libgz_ros2_control.so" name="gz_ros2_control">
       <robot_param>robot_description</robot_param>
       <robot_param_node>robot_state_publisher</robot_param_node>
       <parameters>$(find kai)/config/kai_controller.yaml</parameters>
     </plugin>
-</gazebo>
+</gazebo> -->
 
 </robot>
