@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box];
+"mg995" [label="mg995"];
+"assembly_2" [label="assembly_2"];
+"baselink" [label="baselink"];
+"assembly_1" [label="assembly_1"];
+"outarm" [label="outarm"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"mg995" -> "baseyaw" [label="xyz: -1.38778e-17 0.01 0.0695 \nrpy: 1.2326e-32 -2.31112e-33 1.5708"]
+"baseyaw" -> "assembly_2"
+"assembly_2" -> "baselink_frame" [label="xyz: -0.01 -1.38778e-17 -0.072 \nrpy: -2.31112e-33 -1.2326e-32 -1.5708"]
+"baselink_frame" -> "baselink"
+"mg995" -> "motor2" [label="xyz: -0.0194172 -0.0126252 0.0795 \nrpy: 1.5708 -0.454503 2.09032"]
+"motor2" -> "assembly_1"
+"assembly_1" -> "outarm_joint" [label="xyz: -3.96211e-15 0.0990343 0.0445 \nrpy: -3.14159 -2.14567e-15 0.774451"]
+"outarm_joint" -> "outarm"
+}
