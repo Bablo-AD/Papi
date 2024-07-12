@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"dummy_link" [label="dummy_link"];
+"Servo" [label="Servo"];
+"Hand" [label="Hand"];
+"outarm" [label="outarm"];
+"Base" [label="Base"];
+"baselink" [label="baselink"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"dummy_link" -> "dummy_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"dummy_joint" -> "Servo"
+"Servo" -> "Hand_joint" [label="xyz: -0.0194172 -0.0126252 0.0795 \nrpy: 1.5708 -0.454503 2.09032"]
+"Hand_joint" -> "Hand"
+"Hand" -> "outarm_joint" [label="xyz: -3.96211e-15 0.0990343 0.0445 \nrpy: -3.14159 -2.14567e-15 0.774451"]
+"outarm_joint" -> "outarm"
+"Servo" -> "Motor_joint" [label="xyz: -1.38778e-17 0.01 0.0695 \nrpy: 1.2326e-32 -2.31112e-33 1.5708"]
+"Motor_joint" -> "Base"
+"Base" -> "Base_joint" [label="xyz: -0.01 -1.38778e-17 -0.072 \nrpy: -2.31112e-33 -1.2326e-32 -1.5708"]
+"Base_joint" -> "baselink"
+}
