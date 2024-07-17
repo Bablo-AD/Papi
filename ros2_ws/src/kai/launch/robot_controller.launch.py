@@ -12,7 +12,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='kai').find('kai')
-    default_model_path = os.path.join(pkg_share, 'src/description/robot.urdf')
+    default_model_path = os.path.join(pkg_share, 'src/description/robot.urdf.xacro')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
     robot_controllers = os.path.join(pkg_share, 'config/kai_controller.yaml')
 

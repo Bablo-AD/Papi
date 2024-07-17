@@ -12,8 +12,8 @@ controller_manager:
 kai_controller:
   ros__parameters:
     joints:
-      - baseyaw
-      - motor2
+      - baseyaw_joint
+      - baseroll_joint
       - outarm_joint
 
     command_interfaces:

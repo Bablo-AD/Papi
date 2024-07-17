@@ -127,11 +127,11 @@
 
 
 
-<link name="baselink" />
+<link name="world" />
 
 
 <joint name="baselink_frame" type="fixed">
-<parent link="baselink" />
+<parent link="world" />
 <child link="base" />
 <axis xyz="0 0 0"/>
 </joint>
@@ -142,7 +142,7 @@
 <child link="mg995" />
 <axis xyz="0 0 1"/>
 <limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
-<joint_properties friction="0.0"/>
+<dynamics damping="0.05" friction="0.05"/>
 </joint>
 
 <joint name="outarm_joint" type="revolute">
@@ -151,7 +151,7 @@
 <child link="outarm" />
 <axis xyz="0 0 1"/>
 <limit effort="1" velocity="20" lower="-1.0" upper="2.141592653589793116"/>
-<joint_properties friction="0.0"/>
+<dynamics damping="0.05" friction="0.05"/>
 </joint>
 
 <joint name="baseroll_joint" type="revolute">
@@ -160,7 +160,7 @@
 <child link="upperarm" />
 <axis xyz="0 0 1"/>
 <limit effort="1" velocity="20" lower="-2.0" upper="1.141592653589793116"/>
-<joint_properties friction="0.0"/>
+<dynamics damping="0.05" friction="0.05"/>
 </joint>
 
 
