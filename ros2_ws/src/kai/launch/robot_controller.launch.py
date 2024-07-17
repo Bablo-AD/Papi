@@ -1,134 +1,205 @@
-import launch
-from launch.substitutions import Command, LaunchConfiguration
-import launch_ros
+# Author: Addison Sears-Collins
+# Date: April 29, 2024
+# Description: Launch a robotic arm in Gazebo 
 import os
+from launch import LaunchDescription
+from launch.actions import AppendEnvironmentVariable, DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
 from launch.actions import RegisterEventHandler
+from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
-from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration,PathJoinSubstitution
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-
+import xacro
 
 def generate_launch_description():
-    pkg_share = launch_ros.substitutions.FindPackageShare(package='kai').find('kai')
-    default_model_path = os.path.join(pkg_share, 'src/description/robot.urdf.xacro')
-    default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
-    robot_controllers = os.path.join(pkg_share, 'config/kai_controller.yaml')
-
-    robot_state_publisher_node = launch_ros.actions.Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        parameters=[{'robot_description': Command(['xacro ', LaunchConfiguration('model')])}]
+ 
+  # Constants for paths to different files and folders
+  package_name_gazebo = 'kai'
+ 
+  default_robot_name = 'kai'
+  #gazebo_launch_file_path = 'launch'
+  #gazebo_models_path = 'models'
+  rviz_config_file_path = 'rviz/urdf_config.rviz'
+  urdf_file_path = 'src/description/robot.urdf.xacro'
+  #world_file_path = 'worlds/empty.world' # e.g. 'world/empty.world', 'world/house.world'
+ 
+  # Set the path to different files and folders.  
+  pkg_share_gazebo = FindPackageShare(package=package_name_gazebo).find(package_name_gazebo)
+ 
+  default_rviz_config_path = os.path.join(pkg_share_gazebo, rviz_config_file_path)  
+  default_urdf_model_path = os.path.join(pkg_share_gazebo, urdf_file_path)
+  #gazebo_launch_file_path = os.path.join(pkg_share_gazebo, gazebo_launch_file_path)   
+  #gazebo_models_path = os.path.join(pkg_share_gazebo, gazebo_models_path)
+  #world_path = os.path.join(pkg_share_gazebo, world_file_path)
+   
+  # Launch configuration variables specific to simulation
+  robot_name = LaunchConfiguration('robot_name')
+  rviz_config_file = LaunchConfiguration('rviz_config_file')
+  use_robot_state_pub = LaunchConfiguration('use_robot_state_pub')
+  use_rviz = LaunchConfiguration('use_rviz')
+  use_sim_time = LaunchConfiguration('use_sim_time')
+  #world = LaunchConfiguration('world')
+   
+  # Declare the launch arguments  
+  declare_robot_name_cmd = DeclareLaunchArgument(
+    name='robot_name',
+    default_value=default_robot_name,
+    description='The name for the robot')
+ 
+  declare_rviz_config_file_cmd = DeclareLaunchArgument(
+    name='rviz_config_file',
+    default_value=default_rviz_config_path,
+    description='Full path to the RVIZ config file to use')
+ 
+  declare_use_robot_state_pub_cmd = DeclareLaunchArgument(
+    name='use_robot_state_pub',
+    default_value='True',
+    description='Whether to start the robot state publisher')
+ 
+  declare_use_rviz_cmd = DeclareLaunchArgument(
+    name='use_rviz',
+    default_value='True',
+    description='Whether to start RVIZ')
+     
+  #declare_use_sim_time_cmd = DeclareLaunchArgument(
+  #  name='use_sim_time',
+  #  default_value='true',
+  #  description='Use simulation (Gazebo) clock if true')
+ 
+#  declare_world_cmd = DeclareLaunchArgument(
+ #   name='world',
+  #  default_value=world_path,
+   # description='Full path to the world model file to load')
+ 
+     
+  # Specify the actions
+ 
+  #set_env_vars_resources = AppendEnvironmentVariable(
+  #  'GZ_SIM_RESOURCE_PATH',
+  #  gazebo_models_path)
+ 
+  # Start arm controller
+  start_arm_controller_cmd = ExecuteProcess(
+    cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+        'kai_controller'],
+        output='screen')
+ 
+  # Start Gazebo environment
+  #start_gazebo_cmd = IncludeLaunchDescription(
+   # PythonLaunchDescriptionSource(
+   #   os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+   # launch_arguments=[('gz_args', [' -r -v 4 ', world])])
+ 
+  # Start gripper controller
+  #start_gripper_controller_cmd =  ExecuteProcess(
+   # cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+    #    'kai_controller'],
+     #   output='screen')
+   
+  # Launch joint state broadcaster
+  start_joint_state_broadcaster_cmd = ExecuteProcess(
+    cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+        'joint_state_broadcaster'],
+        output='screen')
+     
+  # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
+  doc = xacro.parse(open(default_urdf_model_path))
+  xacro.process_doc(doc)
+  start_robot_state_publisher_cmd = Node(
+    condition=IfCondition(use_robot_state_pub),
+    package='robot_state_publisher',
+    executable='robot_state_publisher',
+    name='robot_state_publisher',
+    output='screen',
+    parameters=[{
+      'robot_description': doc.toxml()}])
+ 
+  # Launch RViz
+  start_rviz_cmd = Node(
+    condition=IfCondition(use_rviz),
+    package='rviz2',
+    executable='rviz2',
+    name='rviz2',
+    output='screen',
+    arguments=['-d', rviz_config_file])  
+  robot_controllers = PathJoinSubstitution(
+        [
+            FindPackageShare("kai"),
+            "config",
+            "kai_controller.yaml",
+        ]
     )
-    # joint_state_publisher_node = launch_ros.actions.Node(
-    #     package='joint_state_publisher',
-    #     executable='joint_state_publisher',
-    #     name='joint_state_publisher',
-    #     parameters=[{'robot_description': Command(['xacro ', default_model_path])}],
-    #     condition=launch.conditions.UnlessCondition(LaunchConfiguration('gui'))
-    # )
-    # joint_state_publisher_gui_node = launch_ros.actions.Node(
-    #     package='joint_state_publisher_gui',
-    #     executable='joint_state_publisher_gui',
-    #     name='joint_state_publisher_gui',
-    #     condition=launch.conditions.IfCondition(LaunchConfiguration('gui'))
-    # )
-    rviz_node = launch_ros.actions.Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='log',
-        arguments=['-d', LaunchConfiguration('rvizconfig')],
-    )
-    control_node = launch_ros.actions.Node(
+  control_node = Node(
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[robot_controllers],
-        remappings=[
-            ("~/robot_description", "/robot_description"),
-            (
-                "/forward_position_controller/commands",
-                "/position_commands",
-            ),
-        ],
+         remappings=[
+             ("~/robot_description", "/robot_description"),
+        #     (
+        #         "/forward_position_controller/commands",
+        #         "/position_commands",
+        #     ),
+         ],
         output="both",
     )
-    joint_state_broadcaster_spawner = launch_ros.actions.Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
-    )
-
-    robot_controller_spawner = launch_ros.actions.Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["kai_controller", "-c", "/controller_manager"],
-    )
-    delay_rviz_after_joint_state_broadcaster_spawner = RegisterEventHandler(
+     
+  # Spawn the robot
+  #start_gazebo_ros_spawner_cmd = Node(
+   # package='ros_gz_sim',
+   # executable='create',
+   # arguments=[
+   #   '-string', doc.toxml(),
+   #   '-name', robot_name,
+    #  '-allow_renaming', 'true',
+    #  '-x', x,
+    #  '-y', y,
+    #  '-z', z,
+    #  '-R', roll,
+    #  '-P', pitch,
+    #  '-Y', yaw
+    #  ],
+   # output='screen')
+ 
+  # Launch the joint state broadcaster after spawning the robot
+#   load_joint_state_broadcaster_cmd = RegisterEventHandler(
+#     event_handler=OnProcessExit(
+#     target_action=start_gazebo_ros_spawner_cmd ,
+#      on_exit=[start_joint_state_broadcaster_cmd],))
+ 
+  # Launch the arm controller after launching the joint state broadcaster
+  load_arm_controller_cmd = RegisterEventHandler(
+    event_handler=OnProcessExit(
+    target_action=start_joint_state_broadcaster_cmd,
+    on_exit=[start_arm_controller_cmd],))
+  delay_rviz_after_joint_state_broadcaster_spawner = RegisterEventHandler(
         event_handler=OnProcessExit(
-            target_action=joint_state_broadcaster_spawner,
-            on_exit=[rviz_node],
+            target_action=start_joint_state_broadcaster_cmd,
+            on_exit=[start_rviz_cmd],
         )
     )
 
-    # Delay start of robot_controller after `joint_state_broadcaster`
-    delay_robot_controller_spawner_after_joint_state_broadcaster_spawner = RegisterEventHandler(
-        event_handler=OnProcessExit(
-            target_action=joint_state_broadcaster_spawner,
-            on_exit=[robot_controller_spawner],
-        )
-    )
-    # gazebo_server = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([
-    #         PathJoinSubstitution([
-    #             FindPackageShare('gazebo_ros'),
-    #             'launch',
-    #             'gzserver.launch.py'
-    #         ])
-    #     ]),
-    #     launch_arguments={
-    #         'pause': 'true'
-    #     }.items()
-    # )
-
-    # gazebo_client = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([
-    #         PathJoinSubstitution([
-    #             FindPackageShare('gazebo_ros'),
-    #             'launch',
-    #             'gzclient.launch.py'
-    #         ])
-    #     ])
-    # )
-
-    # urdf_spawn_node = launch_ros.actions.Node(
-    #     package='gazebo_ros',
-    #     executable='spawn_entity.py',
-    #     arguments=[
-    #         '-entity', 'kai',
-    #         '-topic', 'robot_description'
-    #     ],
-    #     output='screen'
-    # )
-    return launch.LaunchDescription([
-        launch.actions.DeclareLaunchArgument(name='gui', default_value='True',
-                                            description='Flag to enable joint_state_publisher_gui'),
-        launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
-                                            description='Absolute path to robot urdf file'),
-        launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
-                                            description='Absolute path to rviz config file'),
-        control_node,
-        robot_state_publisher_node,
-        #joint_state_publisher_gui_node,
-        #joint_state_publisher_node,
-        
-        # gazebo_server,
-        # gazebo_client,
-        # urdf_spawn_node,
-        
-        joint_state_broadcaster_spawner,
-        delay_rviz_after_joint_state_broadcaster_spawner,
-        delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
-        
-    ])
+ 
+  
+  # Create the launch description and populate
+  ld = LaunchDescription()
+ 
+  # Declare the launch options
+  ld.add_action(declare_robot_name_cmd)
+  ld.add_action(declare_rviz_config_file_cmd)
+  ld.add_action(declare_use_robot_state_pub_cmd)  
+  ld.add_action(declare_use_rviz_cmd) 
+ 
+ 
+  # Add any actions
+  ld.add_action(start_robot_state_publisher_cmd)
+  ld.add_action(start_joint_state_broadcaster_cmd)
+  ld.add_action(control_node)  
+ 
+  ld.add_action(load_arm_controller_cmd) 
+  ld.add_action(delay_rviz_after_joint_state_broadcaster_spawner)
+  
+  
+ 
+  return ld

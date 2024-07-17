@@ -1,0 +1,10 @@
+<library path="kai">
+  <class name="kai/RobotSystem"
+         type="kai::RobotSystem"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Robot hardware plugin for Kai.
+    </description>
+  </class>
+  
+</library>

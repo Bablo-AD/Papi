@@ -38,8 +38,8 @@ class ExampleJointTrajectoryPublisherPy(Node):
         # Set the desired goal poses for the robotic arm.
         self.arm_positions = []
         self.arm_positions.append([0.0, 0.0, 0.0]) # Home location
-        self.arm_positions.append([0.264, 0.264, 0.264]) # Goal location
-        self.arm_positions.append([0.264, 0.264, 0.264]) 
+        self.arm_positions.append([0.5,-0.5, -0.5]) # Goal location
+        self.arm_positions.append([0.9, 0.264, 0.264]) 
         self.arm_positions.append([0.0, 0.0, 0.0]) # Home location
  
        
