@@ -3,7 +3,8 @@
 <ros2_control name="kai_controller" type="system">
 
  <hardware>
-   <plugin>kai/RobotSystem</plugin>
+   <!-- <plugin>kai/RobotSystem</plugin> -->
+   <plugin>ign_ros2_control/IgnitionSystem</plugin>
    <param name="example_param_write_for_sec">2</param>
    <param name="example_param_read_for_sec">2</param>
  </hardware>

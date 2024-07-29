@@ -24,7 +24,7 @@ class ExampleJointTrajectoryPublisherPy(Node):
         # Create the publisher of the desired arm and gripper goal poses
         self.arm_pose_publisher = self.create_publisher(JointTrajectory, '/kai_controller/joint_trajectory', 1)
         
-        self.timer_period = 5.0  # seconds 5.0
+        self.timer_period = 3.0  # seconds 5.0
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
  
         self.frame_id = "world"
@@ -32,15 +32,15 @@ class ExampleJointTrajectoryPublisherPy(Node):
         # Desired time from the trajectory start to arrive at the trajectory point.
         # Needs to be less than or equal to the self.timer_period above to allow
         # the robotic arm to smoothly transition between points.
-        self.duration_sec = 2
+        self.duration_sec = 1
         self.duration_nanosec = 0.5 * 1e9 # (seconds * 1e9)
  
         # Set the desired goal poses for the robotic arm.
         self.arm_positions = []
         self.arm_positions.append([0.0, 0.0, 0.0]) # Home location
-        self.arm_positions.append([0.5,-0.5, -0.5]) # Goal location
-        self.arm_positions.append([0.9, 0.264, 0.264]) 
-        self.arm_positions.append([0.0, 0.0, 0.0]) # Home location
+        self.arm_positions.append([2.0, 1.0, 2.0]) 
+
+        self.arm_positions.append([0.0, -2.0, -1.0]) # Home location
  
        
         # Keep track of the current trajectory we are executing

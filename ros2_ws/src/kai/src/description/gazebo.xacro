@@ -8,29 +8,29 @@
     </gazebo>
 <gazebo reference="outarm">
   <material>Gazebo/Red</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <!-- <mu1>0.2</mu1>
+  <mu2>0.2</mu2> -->
   <self_collide>true</self_collide>
   <gravity>true</gravity>
 </gazebo>
 <gazebo reference="base">
   <material>Gazebo/Black</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <!-- <mu1>0.2</mu1>
+  <mu2>0.2</mu2> -->
   <self_collide>true</self_collide>
   <gravity>true</gravity>
 </gazebo>
 <gazebo reference="upperarm">
   <material>Gazebo/Black</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <!-- <mu1>0.2</mu1>
+  <mu2>0.2</mu2> -->
   <self_collide>true</self_collide>
   <gravity>true</gravity>
 </gazebo>
 <gazebo reference="mg995">
   <material>Gazebo/Black</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <!-- <mu1>0.2</mu1>
+  <mu2>0.2</mu2> -->
   <self_collide>true</self_collide>
   <gravity>true</gravity>
 </gazebo>
