@@ -127,21 +127,17 @@
 
 
 
-<link name="world" />
+
+<link name="endeffector"/>
 
 
-<joint name="baselink_frame" type="fixed">
-<parent link="world" />
-<child link="base" />
-<axis xyz="0 0 0"/>
-</joint>
 
 <joint name="baseyaw_joint" type="revolute">
 <origin xyz="0 0 0.065" rpy="1.2325951644078287564e-32 -2.3111159332646792604e-33 1.570796326794896558" />
 <parent link="base" />
 <child link="mg995" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
+<limit effort="1.0" velocity="20.01" lower="0" upper="3.141592653589793116"/>
 <dynamics damping="0.05" friction="0.05"/>
 </joint>
 
@@ -150,8 +146,15 @@
 <parent link="upperarm" />
 <child link="outarm" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="-1.0" upper="2.141592653589793116"/>
+<limit effort="1.0" velocity="20.01" lower="-1.0" upper="2.141592653589793116"/>
 <dynamics damping="0.05" friction="0.05"/>
+</joint>
+
+<joint name="endeffector_joint" type="fixed">
+<origin xyz="0.075 0 0"/>
+<parent link="outarm" />
+<child link="endeffector" />
+
 </joint>
 
 <joint name="baseroll_joint" type="revolute">
@@ -159,7 +162,7 @@
 <parent link="mg995" />
 <child link="upperarm" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="-2.0" upper="1.141592653589793116"/>
+<limit effort="1.0" velocity="20.01" lower="-2.0" upper="1.141592653589793116"/>
 <dynamics damping="0.05" friction="0.05"/>
 </joint>
 

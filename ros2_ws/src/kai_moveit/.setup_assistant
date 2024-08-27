@@ -1,0 +1,23 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: kai
+    relative_path: src/description/robot.urdf.xacro
+  srdf:
+    relative_path: config/kai.srdf
+  package_settings:
+    author_name: N Prasanna
+    author_email: prasannanatarajan3595@gmail.com
+    generated_timestamp: 1724086477
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position

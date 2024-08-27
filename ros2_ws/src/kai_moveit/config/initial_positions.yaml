@@ -1,0 +1,6 @@
+# Default initial positions for kai's ros2_control fake system
+
+initial_positions:
+  baseroll_joint: 0
+  baseyaw_joint: 0
+  outarm_joint: 0

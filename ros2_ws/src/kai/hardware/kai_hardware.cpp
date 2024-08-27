@@ -36,7 +36,7 @@ void makeRequest(const std::string& value_1 = "",const std::string& value_2 = ""
 
     curl = curl_easy_init();
     if(curl) {
-        std::string url = "http://192.168.55.194:80/move?v1="+value_1+"&v2="+value_2+"&v3="+value_3;
+        std::string url = "http://192.168.45.194:80/move?v1="+value_1+"&v2="+value_2+"&v3="+value_3;
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
