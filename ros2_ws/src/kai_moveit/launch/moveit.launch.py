@@ -11,8 +11,10 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from launch.substitutions import Command
 from launch.substitutions import LaunchConfiguration,PathJoinSubstitution
 import xacro
+import launch
 from moveit_configs_utils import MoveItConfigsBuilder
  
 def generate_launch_description():
@@ -28,7 +30,7 @@ def generate_launch_description():
     package_name_gazebo = 'kai_moveit'
     default_robot_name = 'kai'
     rviz_config_file_path = 'config/moveit.rviz'
-    urdf_file_path = 'src/description/robot.urdf.xacro'
+    urdf_file_path = '/home/prasannan-robot/Desktop/Papi/ros2_ws/src/kai/src/description/robot.urdf.xacro'
     pkg_share_gazebo = FindPackageShare(package=package_name_gazebo).find(package_name_gazebo)
     default_rviz_config_path = os.path.join(pkg_share_gazebo, rviz_config_file_path) 
     run_move_group_node = Node(
@@ -108,15 +110,25 @@ def generate_launch_description():
          ],
         output="both",
     )
+    joint_state_publisher_node = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        parameters=[{'robot_description': Command(['xacro ', urdf_file_path])}],
+        condition=launch.conditions.UnlessCondition(LaunchConfiguration('gui'))
+    )
     
     
     return LaunchDescription(
         [
+            launch.actions.DeclareLaunchArgument(name='gui', default_value='False',
+                                            description='Flag to enable joint_state_publisher_gui'),
             static_tf,
             robot_state_publisher,
             load_arm_controller_cmd,
             delay_rviz_after_joint_state_broadcaster_spawner,
             control_node,joint_state_broadcaster_spawner,
+            joint_state_publisher_node,
             run_move_group_node,
 rviz_node            
             
