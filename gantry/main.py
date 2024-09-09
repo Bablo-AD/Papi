@@ -1,13 +1,17 @@
 from openai import OpenAI
 import streamlit as st
+import cv2shit as ass
 # from dotenv import load_dotenv
 # load_dotenv()
+import ArduinoSerial as ar
 
 st.title("PAPI-Physical API")
+ass.cvshit("new3.jpeg")
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+
 file = client.files.create(
-  file=open("benchmark.jpeg", "rb"),
+  file=open("new4.jpeg", "rb"),
   purpose="vision"
 )
 
@@ -19,9 +23,9 @@ else:
     thread = client.beta.threads.retrieve(st.session_state.thread_id)
 
 
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+# for message in st.session_state.messages:
+#     with st.chat_message(message["role"]):
+#         st.markdown(message["content"])
 
 if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
@@ -40,6 +44,13 @@ if prompt := st.chat_input("What is up?"):
             if run.status == 'completed': 
                 messages = client.beta.threads.messages.list(thread_id=thread.id)
                 break
-  
-        response = st.markdown(messages.data[0].content[0].text)
-    st.session_state.messages.append({"role": "assistant", "content": response})
+        print(messages)
+        response = messages.data[0].content[0].text.value
+        # st.markdown(response)
+        st.image("new4.jpeg",caption="Output after prediction")
+        st.code(response, language="gcode")       
+        print(response)
+        res=list(response.split("\n"))
+        print(res)
+        for d in res:
+            ar.sdgcode(d)
