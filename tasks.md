@@ -1,0 +1,4 @@
+- Fix simulation
+- Test already version build using rekep (high priority)
+- Fix Website
+- Make Video
