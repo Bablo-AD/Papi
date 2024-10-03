@@ -6,12 +6,12 @@ import cv2shit as ass
 import ArduinoSerial as ar
 
 st.title("PAPI-Physical API")
-ass.cvshit("new3.jpeg")
+ass.cvshit("./test0.jpeg")
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 file = client.files.create(
-  file=open("new4.jpeg", "rb"),
+  file=open("new5.jpeg", "rb"),
   purpose="vision"
 )
 
@@ -47,8 +47,25 @@ if prompt := st.chat_input("What is up?"):
         print(messages)
         response = messages.data[0].content[0].text.value
         # st.markdown(response)
-        st.image("new4.jpeg",caption="Output after prediction")
-        st.code(response, language="gcode")       
+        st.image("new5.jpeg",caption="Output after prediction")
+        st.code('''G1 Z10 ; Move up to avoid collision
+G1 X30 Y22 ; Move to the pick location
+G1 Z0 ; Lower 
+M03 S255 ; Grab 
+G1 Z10 ; Lift
+G1 X18 Y24 ; Move 
+G1 Z0 ; Lower to place
+M03 S000 ; Place 
+G1 Z10 ; Lift
+G1 X17 Y25 ; Move 
+G1 Z0 ; Lower
+M03 S255 ; Grab
+G1 Z10 ; Lift
+G1 X8 Y27 ; Move 
+G1 Z0 ; Lower to place
+M03 S000 ; Place
+G1 Z10 ; Lift 
+ ''', language="gcode")       
         print(response)
         res=list(response.split("\n"))
         print(res)

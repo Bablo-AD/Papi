@@ -3,7 +3,7 @@
 <visual>
 <origin xyz="0 0 0" rpy="1.570796326794896558 -0 -1.570796326794896558" />
 <geometry>
-<mesh filename="package:///e1.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e1.stl"/>
 </geometry>
 <material name="e1_material">
 <color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
@@ -12,7 +12,7 @@
 <collision>
 <origin xyz="0 0 0" rpy="1.570796326794896558 -0 -1.570796326794896558" />
 <geometry>
-<mesh filename="package:///e1.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e1.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -26,7 +26,7 @@
 <visual>
 <origin xyz="0 0 0.025000000000000008327" rpy="-1.570796326794896558 -1.570796326794896558 0" />
 <geometry>
-<mesh filename="package:///e2.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e2.stl"/>
 </geometry>
 <material name="e2_material">
 <color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
@@ -35,7 +35,7 @@
 <collision>
 <origin xyz="0 0 0.025000000000000008327" rpy="-1.570796326794896558 -1.570796326794896558 0" />
 <geometry>
-<mesh filename="package:///e2.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e2.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -49,7 +49,7 @@
 <visual>
 <origin xyz="0 0 -0.024999999999999966693" rpy="-1.570796326794896558 -1.570796326794896558 0" />
 <geometry>
-<mesh filename="package:///e3.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e3.stl"/>
 </geometry>
 <material name="e3_material">
 <color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
@@ -58,7 +58,7 @@
 <collision>
 <origin xyz="0 0 -0.024999999999999966693" rpy="-1.570796326794896558 -1.570796326794896558 0" />
 <geometry>
-<mesh filename="package:///e3.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e3.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -72,7 +72,7 @@
 <visual>
 <origin xyz="0 0 -0.63000000000000000444" rpy="-2.3523686426266381469e-31 -1.5247808850011199512e-40 -1.5077037809858845948e-44" />
 <geometry>
-<mesh filename="package:///e4.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e4.stl"/>
 </geometry>
 <material name="e4_material">
 <color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
@@ -81,7 +81,7 @@
 <collision>
 <origin xyz="0 0 -0.63000000000000000444" rpy="-2.3523686426266381469e-31 -1.5247808850011199512e-40 -1.5077037809858845948e-44" />
 <geometry>
-<mesh filename="package:///e4.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/e4.stl"/>
 </geometry>
 </collision>
 <inertial>
@@ -96,7 +96,7 @@
 <parent link="e3" />
 <child link="e4" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="0.10000000000000000555" upper="0.69999999999999995559"/>
+<limit effort="1" velocity="20" lower="-0.100" upper="0.159"/>
 <joint_properties friction="0.0"/>
 </joint>
 
@@ -110,11 +110,11 @@
 </joint>
 
 <joint name="x" type="prismatic">
-<origin xyz="0.14338706748580448691 0.4749999999999999778 0.60499999999999998224" rpy="1.570796326794896558 -0 -1.570796326794896558" />
+<origin xyz="0.400 0.4749999999999999778 0.60499999999999998224" rpy="1.570796326794896558 -0 -1.570796326794896558" />
 <parent link="e1" />
 <child link="e2" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="0.010000000000000000208" upper="0.83999999999999996891"/>
+<limit effort="1" velocity="20" lower="0.0" upper="0.630"/>
 <joint_properties friction="0.0"/>
 </joint>
 

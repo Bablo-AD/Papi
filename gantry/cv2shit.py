@@ -6,6 +6,11 @@ def cvshit(ipt):
     # Load the input image
     image_path = ipt
     frame = cv2.imread(image_path)
+    # cap = cv2.VideoCapture(0)  # Change the index to 1 or 2 if the webcam is not working with 0
+    # if not cap.isOpened():
+    #     print("Error: Could not open the camera.")
+    #     exit()
+    # ret, frame = cap.read()
 
     # Check if the image is loaded successfully
     if frame is None:
