@@ -96,16 +96,16 @@
 <parent link="e3" />
 <child link="e4" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="-0.100" upper="0.159"/>
+<limit effort="100" velocity="200" lower="-0.100" upper="0.159"/>
 <joint_properties friction="0.0"/>
 </joint>
 
-<joint name="y" type="prismatic">
+<joint name="y_axis" type="prismatic">
 <origin xyz="0.86499999999999876987 0 0.025000000000000008327" rpy="-1.570796326794896558 -1.065814103631468549e-14 1.5707963267949136554" />
 <parent link="e2" />
 <child link="e3" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="0.05999999999999999778" upper="0.83999999999999996891"/>
+<limit effort="100" velocity="200" lower="0.05999999999999999778" upper="0.83999999999999996891"/>
 <joint_properties friction="0.0"/>
 </joint>
 
@@ -114,9 +114,67 @@
 <parent link="e1" />
 <child link="e2" />
 <axis xyz="0 0 1"/>
-<limit effort="1" velocity="20" lower="0.0" upper="0.630"/>
+<limit effort="100" velocity="200" lower="0.0" upper="0.630"/>
 <joint_properties friction="0.0"/>
 </joint>
+<gazebo>
+        <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+   
+            <parameters>$(find hath)/config/hath_controller.yaml</parameters>
+        </plugin>
+    </gazebo>
+<ros2_control name="hath_controller" type="system">
 
-
+ <hardware>
+   <!-- <plugin>kai/RobotSystem</plugin> -->
+   <plugin>ign_ros2_control/IgnitionSystem</plugin>
+   <param name="example_param_write_for_sec">2</param>
+   <param name="example_param_read_for_sec">2</param>
+ </hardware>
+ <joint name="x">
+   <command_interface name="position">
+     <param name="min">0</param>
+     <param name="max">3.141592653589793116</param>
+   </command_interface>  
+   <command_interface name="velocity">
+    <param name="min">-200</param>
+    <param name="max">200</param>
+  </command_interface>
+  <command_interface name="effort">
+    <param name="min">-100</param>
+    <param name="max">100</param>
+  </command_interface>
+   <state_interface name="position"/>
+ </joint>
+ <joint name="y_axis">
+   <command_interface name="position">
+     <param name="min">-2</param>
+     <param name="max">1.141592653589793116</param>
+   </command_interface>
+     <command_interface name="velocity">
+    <param name="min">-200</param>
+    <param name="max">200</param>
+  </command_interface>
+  <command_interface name="effort">
+    <param name="min">-100</param>
+    <param name="max">100</param>
+  </command_interface>
+    <state_interface name="position"/>
+    </joint>
+ <joint name="z">
+   <command_interface name="position">
+     <param name="min">-1</param>
+     <param name="max">2.141592653589793116</param>
+   </command_interface>
+     <command_interface name="velocity">
+    <param name="min">-200</param>
+    <param name="max">200</param>
+  </command_interface>
+  <command_interface name="effort">
+    <param name="min">-100</param>
+    <param name="max">100</param>
+  </command_interface>
+    <state_interface name="position"/>
+ </joint>
+</ros2_control>
 </robot>

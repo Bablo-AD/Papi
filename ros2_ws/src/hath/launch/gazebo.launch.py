@@ -121,7 +121,7 @@ def generate_launch_description():
   # Start arm controller
   start_arm_controller_cmd = ExecuteProcess(
     cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-        'kai_controller'],
+        'hath_controller'],
         output='screen')
  
   # Start Gazebo environment
@@ -132,10 +132,10 @@ def generate_launch_description():
     )
  
 #   # Start gripper controller
-#   start_gripper_controller_cmd =  ExecuteProcess(
-#     cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-#         'grip_controller'],
-#         output='screen')
+  # start_gripper_controller_cmd =  ExecuteProcess(
+  #   cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+  #       'hath_controller'],
+  #       output='screen')
    
   # Launch joint state broadcaster
   start_joint_state_broadcaster_cmd = ExecuteProcess(

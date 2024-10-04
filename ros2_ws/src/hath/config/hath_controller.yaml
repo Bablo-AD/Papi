@@ -1,0 +1,22 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    hath_controller: 
+      type: position_controllers/JointGroupPositionController
+
+
+hath_controller:
+  ros__parameters:
+    joints:
+      - x
+      - y_axis
+      - z
+
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
