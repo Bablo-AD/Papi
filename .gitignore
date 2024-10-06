@@ -3,7 +3,8 @@
 /ros2_ws/log
 /ros2_ws/src/mycobot_gazebo
 /ros2_ws/src/hath_moveit
-/ros2_ws/src/GANTRY_ROBOT_CONTROL_ROS2
+/ros2_ws/src/GANTRY_ROBOT_CONTROL_ROS2/robot_control
+/ros2_ws/src/GANTRY_ROBOT_CONTROL_ROS2/robot_msgs
 /gantry/env
 *.env
 *.toml
