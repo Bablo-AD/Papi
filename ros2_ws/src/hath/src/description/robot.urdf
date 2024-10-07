@@ -1,180 +1,283 @@
 <robot name="onshape">
-<link name="e1">
+<link name="8mmrod1">
 <visual>
-<origin xyz="0 0 0" rpy="1.570796326794896558 -0 -1.570796326794896558" />
+<origin xyz="-0.28000000000000091482 0.025000000000000039552 0.63499999999999989786" rpy="3.2036507136241309041e-16 -6.3790474246745093929e-17 -1.57079632679489678" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e1.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/camera.stl"/>
 </geometry>
-<material name="e1_material">
-<color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
+<material name="camera_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
 </material>
 </visual>
 <collision>
-<origin xyz="0 0 0" rpy="1.570796326794896558 -0 -1.570796326794896558" />
+<origin xyz="-0.28000000000000091482 0.025000000000000039552 0.63499999999999989786" rpy="3.2036507136241309041e-16 -6.3790474246745093929e-17 -1.57079632679489678" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e1.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/camera.stl"/>
 </geometry>
 </collision>
-<inertial>
-<origin xyz="-3.7970753644472524701e-16 3.0708669268189419697e-16 0.084869144365845736178" rpy="0 0 0"/>
-<mass value="95.326366640812040032" />
-<inertia ixx="12.630874432683471653" ixy="1.7206677941847264689e-14"  ixz="7.3120036664136709117e-15" iyy="12.482312674068598568" iyz="-4.2484821022772146146e-15" izz="18.731998096528414521" />
-</inertial>
-</link>
-
-<link name="e2">
 <visual>
-<origin xyz="0 0 0.025000000000000008327" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<origin xyz="0.26450000000000073452 -0.24999999999999905631 0.025000000000000400374" rpy="1.7635062282686290126e-15 1.4157186274743710017e-15 -1.5707963267948970021" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e2.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
 </geometry>
-<material name="e2_material">
-<color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
+<material name="part_1_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
 </material>
 </visual>
 <collision>
-<origin xyz="0 0 0.025000000000000008327" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<origin xyz="0.26450000000000073452 -0.24999999999999905631 0.025000000000000400374" rpy="1.7635062282686290126e-15 1.4157186274743710017e-15 -1.5707963267948970021" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e2.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
 </geometry>
 </collision>
-<inertial>
-<origin xyz="0.4749999999999999778 4.3474480473069823218e-19 0.025000000000000011796" rpy="0 0 0"/>
-<mass value="2.6162927999999996409" />
-<inertia ixx="0.00053840131775999982861" ixy="6.1332061310000917834e-45"  ixz="-4.0253318085083912055e-48" iyy="0.24485606431776021918" iyz="4.6574280432349153179e-21" izz="0.24488962462368024653" />
-</inertial>
-</link>
-
-<link name="e3">
 <visual>
-<origin xyz="0 0 -0.024999999999999966693" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<origin xyz="-0.32000000000000028422 -0.26999999999999985123 0.62499999999999977796" rpy="-3.1415926535897922278 -9.4971216230241976208e-17 -1.57079632679489678" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e3.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
 </geometry>
-<material name="e3_material">
-<color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
+<material name="part_1_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
 </material>
 </visual>
 <collision>
-<origin xyz="0 0 -0.024999999999999966693" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<origin xyz="-0.32000000000000028422 -0.26999999999999985123 0.62499999999999977796" rpy="-3.1415926535897922278 -9.4971216230241976208e-17 -1.57079632679489678" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e3.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
 </geometry>
 </collision>
-<inertial>
-<origin xyz="-5.5926671212169533675e-19 0.024999999999999990979 -0.024999999999999959754" rpy="0 0 0"/>
-<mass value="0.42929279999999997441" />
-<inertia ixx="0.00049543947072000027541" ixy="5.8624924491365394486e-34"  ixz="-1.4870408963755388034e-33" iyy="0.00021035131776000017597" iyz="1.6134793718248339738e-34" izz="0.00049543947072000016699" />
-</inertial>
-</link>
-
-<link name="e4">
 <visual>
-<origin xyz="0 0 -0.63000000000000000444" rpy="-2.3523686426266381469e-31 -1.5247808850011199512e-40 -1.5077037809858845948e-44" />
+<origin xyz="0.26449999999999990186 -1.4548068743437429034e-17 0.62500000000000055511" rpy="1.7635062282686290126e-15 1.4157186274743710017e-15 -1.5707963267948970021" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e4.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/rod_bearing1.stl"/>
 </geometry>
-<material name="e4_material">
-<color rgba="0.79215686274509800047 0.81960784313725487671 0.93333333333333334814 1.0"/>
+<material name="rod_bearing1_material">
+<color rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0"/>
 </material>
 </visual>
 <collision>
-<origin xyz="0 0 -0.63000000000000000444" rpy="-2.3523686426266381469e-31 -1.5247808850011199512e-40 -1.5077037809858845948e-44" />
+<origin xyz="0.26449999999999990186 -1.4548068743437429034e-17 0.62500000000000055511" rpy="1.7635062282686290126e-15 1.4157186274743710017e-15 -1.5707963267948970021" />
 <geometry>
-<mesh filename="file://$(find hath)/src/description/meshes/e4.stl"/>
+<mesh filename="file://$(find hath)/src/description/meshes/rod_bearing1.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-1.69932095605891274e-16 -8.3266726846886728206e-17 0" rpy="0 -0 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/base.stl"/>
+</geometry>
+<material name="base_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.69932095605891274e-16 -8.3266726846886728206e-17 0" rpy="0 -0 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/base.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-0.0027500000000003554587 -0.30000000000000004441 0.64500000000000001776" rpy="-3.1415926535897922278 -9.4971216230242013186e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/8mmrod1.stl"/>
+</geometry>
+<material name="8mmrod1_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0027500000000003554587 -0.30000000000000004441 0.64500000000000001776" rpy="-3.1415926535897922278 -9.4971216230242013186e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/8mmrod1.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="0.26449999999999979083 0.02499999999999985914 0.63500000000000045297" rpy="-3.1415926535897917837 3.8738303573922892405e-16 -1.5707963267948970021" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/mount_left.stl"/>
+</geometry>
+<material name="mount_left_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.26449999999999979083 0.02499999999999985914 0.63500000000000045297" rpy="-3.1415926535897917837 3.8738303573922892405e-16 -1.5707963267948970021" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/mount_left.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-0.32000000000000017319 0.32000000000000006217 0.625" rpy="3.141592653589793116 -0 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
+</geometry>
+<material name="part_1_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.32000000000000017319 0.32000000000000006217 0.625" rpy="3.141592653589793116 -0 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-0.0027500000000000228255 0.35000000000000008882 0.64500000000000057288" rpy="-3.1415926535897913396 1.4157186274743706073e-15 -1.5707963267948970021" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/8mmrod2.stl"/>
+</geometry>
+<material name="8mmrod2_material">
+<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0027500000000000228255 0.35000000000000008882 0.64500000000000057288" rpy="-3.1415926535897913396 1.4157186274743706073e-15 -1.5707963267948970021" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/8mmrod2.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="0.26450000000000095657 0.30000000000000093259 0.025000000000000736911" rpy="1.7635062282686290126e-15 1.4157186274743710017e-15 -1.5707963267948970021" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
+</geometry>
+<material name="part_1_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.26450000000000095657 0.30000000000000093259 0.025000000000000736911" rpy="1.7635062282686290126e-15 1.4157186274743710017e-15 -1.5707963267948970021" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_1.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-0.32000000000000011768 7.4900132488653611524e-17 0.62499999999999977796" rpy="8.5266676093398143422e-16 -9.4971216230241976208e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/rod_bearing1.stl"/>
+</geometry>
+<material name="rod_bearing1_material">
+<color rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.32000000000000011768 7.4900132488653611524e-17 0.62499999999999977796" rpy="8.5266676093398143422e-16 -9.4971216230241976208e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/rod_bearing1.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="0.26449999999999973532 0.049999999999999829303 0.62500000000000022204" rpy="8.5266676093398153283e-16 -9.4971216230242111794e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_2.stl"/>
+</geometry>
+<material name="part_2_material">
+<color rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.26449999999999973532 0.049999999999999829303 0.62500000000000022204" rpy="8.5266676093398153283e-16 -9.4971216230242111794e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_2.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-0.32000000000000011768 0.049999999999999815425 0.62499999999999977796" rpy="8.5266676093398163143e-16 -9.4971216230241976208e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_2.stl"/>
+</geometry>
+<material name="part_2_material">
+<color rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.32000000000000011768 0.049999999999999815425 0.62499999999999977796" rpy="8.5266676093398163143e-16 -9.4971216230241976208e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_2.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-0.32000000000000022871 0.025000000000000043021 0.63499999999999989786" rpy="-3.141592653589793116 -6.3790474246745093929e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/mount_left.stl"/>
+</geometry>
+<material name="mount_left_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.32000000000000022871 0.025000000000000043021 0.63499999999999989786" rpy="-3.141592653589793116 -6.3790474246745093929e-17 -1.57079632679489678" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/mount_left.stl"/>
 </geometry>
 </collision>
 <inertial>
-<origin xyz="-3.3477703339821975432e-19 1.9692766670468804608e-20 -0.38721352184658541784" rpy="0 0 0"/>
-<mass value="1.8145851753705573017" />
-<inertia ixx="0.075504483690560356135" ixy="-2.1841891328661587495e-45"  ixz="1.1457793727377727704e-41" iyy="0.075504483690560356135" iyz="-1.778328608651823408e-32" izz="0.00036061324933751268433" />
+<origin xyz="-0.011259019324296098974 0.019444701062032967304 0.17551050591815395285" rpy="0 0 0"/>
+<mass value="8.6576870598331243656" />
+<inertia ixx="0.96651356712472802357" ixy="0.0027761928882552638562"  ixz="0.023273621219331748489" iyy="0.97057826666593016718" iyz="-0.058778682289412499673" izz="0.96919001335018994947" />
 </inertial>
 </link>
 
-<joint name="z" type="prismatic">
-<origin xyz="-0.39604517031157382423 0.050000000000000002776 -0.025000000000000133227" rpy="-1.57079632679489678 -1.1511376128497489384e-14 1.5707963267948858999" />
-<parent link="e3" />
-<child link="e4" />
+<link name="part_3">
+<visual>
+<origin xyz="0 0.010000000000000119904 0.035173927076963512617" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/rod_bearing1.stl"/>
+</geometry>
+<material name="rod_bearing1_material">
+<color rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0.010000000000000119904 0.035173927076963512617" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/rod_bearing1.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="-5.5511151231257827021e-17 0.0099999999999997868372 -0.084999999999999936717" rpy="-1.5707963267948970021 -1.570796326794896336 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_2.stl"/>
+</geometry>
+<material name="part_2_material">
+<color rgba="0.64705882352941179736 0.64705882352941179736 0.64705882352941179736 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-5.5511151231257827021e-17 0.0099999999999997868372 -0.084999999999999936717" rpy="-1.5707963267948970021 -1.570796326794896336 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_2.stl"/>
+</geometry>
+</collision>
+<visual>
+<origin xyz="0 0.0099999999999998978595 -0.024999999999999994449" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_3.stl"/>
+</geometry>
+<material name="part_3_material">
+<color rgba="0.44705882352941178626 0.24313725490196078094 0 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0.0099999999999998978595 -0.024999999999999994449" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<geometry>
+<mesh filename="file://$(find hath)/src/description/meshes/part_3.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="-1.0153124290365891983e-17 0.020163650540781917486 -0.0073994696463241206238" rpy="0 0 0"/>
+<mass value="0.31828084038355258789" />
+<inertia ixx="0.00025458039291218338522" ixy="-2.7763706759331497434e-20"  ixz="-4.9216931965376044374e-20" iyy="0.00025909174237480857555" iyz="-4.1522040932956080523e-05" izz="8.6486912999101056652e-05" />
+</inertial>
+</link>
+
+<joint name="sliderx" type="prismatic">
+<origin xyz="-0.25000000000000177636 -0.24999999999999991673 0.64499999999999890754" rpy="-1.570796326794911435 1.8608419724351648241e-15 1.570796326794896336" />
+<parent link="8mmrod1" />
+<child link="part_3" />
 <axis xyz="0 0 1"/>
-<limit effort="100" velocity="200" lower="-0.100" upper="0.159"/>
+<limit effort="1" velocity="20" lower="-0.19000000000000000222" upper="0.23000000000000000999"/>
 <joint_properties friction="0.0"/>
 </joint>
 
-<joint name="y_axis" type="prismatic">
-<origin xyz="0.86499999999999876987 0 0.025000000000000008327" rpy="-1.570796326794896558 -1.065814103631468549e-14 1.5707963267949136554" />
-<parent link="e2" />
-<child link="e3" />
-<axis xyz="0 0 1"/>
-<limit effort="100" velocity="200" lower="0.05999999999999999778" upper="0.83999999999999996891"/>
-<joint_properties friction="0.0"/>
-</joint>
 
-<joint name="x" type="prismatic">
-<origin xyz="0.400 0.4749999999999999778 0.60499999999999998224" rpy="1.570796326794896558 -0 -1.570796326794896558" />
-<parent link="e1" />
-<child link="e2" />
-<axis xyz="0 0 1"/>
-<limit effort="100" velocity="200" lower="0.0" upper="0.630"/>
-<joint_properties friction="0.0"/>
-</joint>
-<gazebo>
-        <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-   
-            <parameters>$(find hath)/config/hath_controller.yaml</parameters>
-        </plugin>
-    </gazebo>
-<ros2_control name="hath_controller" type="system">
-
- <hardware>
-   <!-- <plugin>kai/RobotSystem</plugin> -->
-   <plugin>ign_ros2_control/IgnitionSystem</plugin>
-   <param name="example_param_write_for_sec">2</param>
-   <param name="example_param_read_for_sec">2</param>
- </hardware>
- <joint name="x">
-   <command_interface name="position">
-     <param name="min">0</param>
-     <param name="max">3.141592653589793116</param>
-   </command_interface>  
-   <command_interface name="velocity">
-    <param name="min">-200</param>
-    <param name="max">200</param>
-  </command_interface>
-  <command_interface name="effort">
-    <param name="min">-100</param>
-    <param name="max">100</param>
-  </command_interface>
-   <state_interface name="position"/>
- </joint>
- <joint name="y_axis">
-   <command_interface name="position">
-     <param name="min">-2</param>
-     <param name="max">1.141592653589793116</param>
-   </command_interface>
-     <command_interface name="velocity">
-    <param name="min">-200</param>
-    <param name="max">200</param>
-  </command_interface>
-  <command_interface name="effort">
-    <param name="min">-100</param>
-    <param name="max">100</param>
-  </command_interface>
-    <state_interface name="position"/>
-    </joint>
- <joint name="z">
-   <command_interface name="position">
-     <param name="min">-1</param>
-     <param name="max">2.141592653589793116</param>
-   </command_interface>
-     <command_interface name="velocity">
-    <param name="min">-200</param>
-    <param name="max">200</param>
-  </command_interface>
-  <command_interface name="effort">
-    <param name="min">-100</param>
-    <param name="max">100</param>
-  </command_interface>
-    <state_interface name="position"/>
- </joint>
-</ros2_control>
 </robot>
